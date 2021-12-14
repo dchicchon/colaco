@@ -1,0 +1,12 @@
+.soda-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.soda-item {
+    background: lightgrey;
+    border-radius: 25px;
+    width: 750px;
+    height: 100px;
+}
