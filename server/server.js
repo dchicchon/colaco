@@ -1,15 +1,19 @@
 const express = require('express');
+const createStore = require('./store');
 const app = express();
-const PORT = 4000;
-
-
+const PORT = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
-    res.send('Hello There!')
+    // Show the current status of the api
+    res.sendFile(__dirname + '/public/index.html')
 })
 
-// This is a place where a user can 
+const main = async () => {
+    const store = await createStore();
+    app.listen(PORT, () => {
+        console.log(`Server has started on http://localhost:${PORT}`)
+    })
+};
 
-app.listen(PORT, () => {
-    console.log(`Server has started on http://localhost:${PORT}`)
-})
+main();
+
