@@ -25,7 +25,16 @@ const seedSodas = [
     },
 ]
 
-db.sync({ force: true }).then(() => {
-    // seed the database here
-    db.models.Soda.create()
-})
+const seedDatabase = async () => {
+    for (let soda of seedSodas) {
+        try {
+            const result = await db.models.Soda.create(soda)
+            console.log(result)
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    db.close();
+}
+
+db.sync({ force: true }).then(seedDatabase)
