@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Soda = function Soda({ soda }) {
+const Soda = function Soda({ soda, toggleUpdateModal }) {
   return (
     <div className="soda-item">
       <span>
@@ -16,7 +16,7 @@ const Soda = function Soda({ soda }) {
       <span>
         {soda.quantity}
       </span>
-      <span>&#9776;</span>
+      <span><button onClick={() => toggleUpdateModal(soda)} type="button">&#9776;</button></span>
     </div>
   );
 };

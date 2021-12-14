@@ -13,6 +13,11 @@ const createStore = (testing) => {
     quantity: DataTypes.INTEGER,
   });
 
+  db.define('Transaction', {
+    label: DataTypes.STRING,
+    price: DataTypes.FLOAT,
+  });
+
   db.authenticate();
   return db;
 };

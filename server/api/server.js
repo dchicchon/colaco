@@ -19,7 +19,4 @@ app.get('/', (req, res) => {
 });
 
 app.use(routes);
-
-db.sync().then(app.listen(PORT, () => {
-  // console.log(`Server has started on http://localhost:${PORT}`);
-}));
+db.sync().then(app.listen(PORT));

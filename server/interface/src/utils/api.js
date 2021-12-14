@@ -14,3 +14,8 @@ export const apiUpdateSoda = async (soda) => {
   const result = await axios.put('/admin/sodas', soda);
   return result.data;
 };
+
+export const apiGetTransactions = async () => {
+  const result = await axios.get('/admin/transactions');
+  return result.data;
+};

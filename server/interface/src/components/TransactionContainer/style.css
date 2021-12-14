@@ -1,0 +1,23 @@
+.transaction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    overflow: auto;
+    height: 500px;
+    flex: 1;
+    /* width: 500px; */
+    /* margin: 0 auto; */
+}
+
+.transaction-container-header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.transaction-container-header > span {
+    flex: 1;
+    font-weight: bold;
+    padding: 5px;
+}

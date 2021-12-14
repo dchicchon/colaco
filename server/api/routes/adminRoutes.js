@@ -9,6 +9,11 @@ app.get('/sodas', async (req, res) => {
   res.json(sodas);
 });
 
+app.get('/transactions', async (req, res) => {
+  const transactions = await db.models.Transaction.findAll();
+  res.json(transactions);
+});
+
 app.post('/sodas', async (req, res) => {
   const soda = await db.models.Soda.create(req.body);
   res.json(soda);
