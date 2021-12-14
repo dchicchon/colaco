@@ -15,5 +15,5 @@ app.use(express.static('public'));
 app.use(routes);
 
 db.sync().then(app.listen(PORT, () => {
-  console.log(`Server has started on http://localhost:${PORT}`);
+  // console.log(`Server has started on http://localhost:${PORT}`);
 }));
