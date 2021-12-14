@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -19,7 +20,9 @@
     ],
     "rules": {
         "react/prop-types": "off",
+        "no-console": "off",
         "no-unused-vars": "off",
+        "linebreak-style": "off",
         "jsx-a11y/label-has-associated-control": "off"
     }
 }
