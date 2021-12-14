@@ -21,6 +21,21 @@
     border: 2px solid black;
 }
 
+#soda-selection::-webkit-scrollbar {
+    width: 10px;
+}
+
+#soda-selection::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px 10px transparent;
+    border: solid 3px transparent;
+}
+
+#soda-selection::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 10px 10px grey;
+    border-radius: 5px;
+    border: solid 3px transparent;
+}
+
 .soda-label {
     display: flex;
     border-radius: 25px;
@@ -30,9 +45,12 @@
     height: 50px;
     width: 90%;
 }
-
+.text-wrapper {
+    font-size: 25px;
+    line-height: 40px;
+}
 .button-wrapper {
-    width: 40%;
+    width: 25%;
     padding: 5px;
 }
 

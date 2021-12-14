@@ -14,6 +14,13 @@ app.get('/sodas', async (req, res) => {
 app.put('/sodas', async (req, res) => {
   await db.models.Soda.decrement('quantity', { where: { id: req.body.id } });
   const result = await db.models.Soda.findOne({ where: { id: req.body.id } });
+  const date = new Date();
+  const transaction = {
+    label: result.label,
+    price: result.price,
+    time: date,
+  };
+  await db.models.Transaction.create(transaction);
   res.json(result);
 });
 

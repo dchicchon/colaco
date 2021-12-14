@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { apiAddSoda } from '../../utils/api';
 import './style.css';
 
 // add 'updateBool' as a prop. also take in props for soda that already exists
-const Modal = function Modal({ toggleModal, updateSoda }) {
+const Modal = function Modal({ toggleModal, sodaToUpdate }) {
   const [label, setLabel] = useState('');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    // if we have soda to update, use that for our state
+    if (sodaToUpdate) {
+      console.log('We Have a soda');
+      setLabel(sodaToUpdate.label);
+      setPrice(sodaToUpdate.price);
+      setQuantity(sodaToUpdate.quantity);
+    }
+  }, []);
 
   const changeQuantity = (addBool) => {
     if (addBool) {
@@ -26,7 +36,7 @@ const Modal = function Modal({ toggleModal, updateSoda }) {
 
   return (
     <div className="modal">
-      {updateSoda ? <h4>New Soda</h4> : <h4>Update Soda</h4> }
+      {sodaToUpdate ? <h4>New Soda</h4> : <h4>Update Soda</h4> }
       <div>
         <label htmlFor="label">
           Label
@@ -49,7 +59,6 @@ const Modal = function Modal({ toggleModal, updateSoda }) {
           </div>
         </label>
       </div>
-
       <div>
         {error}
       </div>

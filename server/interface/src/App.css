@@ -2,15 +2,21 @@
   text-align: center;
 }
 
+.tables {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
 .shadow {
   position: absolute;
   z-index: 1;
   transition: background 0.25s;
   opacity: 0.5;
   pointer-events: none;
-  background:none;
-  top:0;
-  left:0;
-  height:100%;
-  width:100%;
+  background: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }

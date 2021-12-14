@@ -1,0 +1,10 @@
+.transaction-item {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.transaction-item > span {
+    padding: 5px;
+    flex: 1;
+}
