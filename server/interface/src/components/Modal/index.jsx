@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { apiAddSoda } from '../../utils/api';
 import './style.css';
 
-// add 'updateBool' as a prop
-const Modal = function Modal({ toggleModal }) {
+// add 'updateBool' as a prop. also take in props for soda that already exists
+const Modal = function Modal({ toggleModal, updateSoda }) {
   const [label, setLabel] = useState('');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState(0);
@@ -17,11 +17,8 @@ const Modal = function Modal({ toggleModal }) {
     }
   };
 
-  const submitQuantity = async () => {
+  const submitSoda = async () => {
     // post request to our server
-    console.log(label);
-    console.log(price);
-    console.log(quantity);
     const result = await apiAddSoda({ label, price, quantity });
     if (!result) setError('Error in form');
     else toggleModal();
@@ -29,7 +26,7 @@ const Modal = function Modal({ toggleModal }) {
 
   return (
     <div className="modal">
-      <h4>New Soda</h4>
+      {updateSoda ? <h4>New Soda</h4> : <h4>Update Soda</h4> }
       <div>
         <label htmlFor="label">
           Label
@@ -58,7 +55,7 @@ const Modal = function Modal({ toggleModal }) {
       </div>
 
       <button onClick={toggleModal} type="button">Cancel</button>
-      <button onClick={submitQuantity} type="button">Submit</button>
+      <button onClick={submitSoda} type="button">Submit</button>
 
     </div>
   );

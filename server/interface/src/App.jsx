@@ -17,9 +17,11 @@ const App = function App() {
   const toggleModal = async () => {
     if (showModal) {
       shadow.current.style.background = 'none';
+      shadow.current.style.pointerEvents = 'none';
       setShowModal(false);
     } else {
       shadow.current.style.background = 'lightgrey';
+      shadow.current.style.pointerEvents = 'all';
       setShowModal(true);
     }
   };
