@@ -1,31 +1,22 @@
 import React from 'react';
 import './style.css';
 
-const Soda = function ({ soda }) {
+const Soda = function Soda({ soda }) {
   return (
     <div className="soda-item">
-      <div>
-        <span>
-          ID:
-          {' '}
-          {soda.id}
-        </span>
-      </div>
       <span>
-        Label:
-        {' '}
+        {soda.id}
+      </span>
+      <span>
         {soda.label}
       </span>
       <span>
-        Price:
-        {' '}
         {soda.price}
       </span>
       <span>
-        Quantity:
-        {' '}
         {soda.quantity}
       </span>
+      <span>&#9776;</span>
     </div>
   );
 };
