@@ -6,14 +6,13 @@ const createStore = () => {
         storage: './storage.sqlite'
     })
 
-    const soda = db.define('soda', {
+    const Soda = db.define('Soda', {
         label: DataTypes.STRING,
         price: DataTypes.FLOAT,
         quantity: DataTypes.INTEGER
     })
 
     db.authenticate();
-    db.sync();
     return db;
 }
 

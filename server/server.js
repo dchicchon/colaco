@@ -1,19 +1,26 @@
 const express = require('express');
-const createStore = require('./store');
+const createStore = require('./utils/store');
 const app = express();
 const PORT = process.env.PORT || 4000;
+const db = createStore();
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
     // Show the current status of the api
     res.sendFile(__dirname + '/public/index.html')
+    // buttons on the index.html will allow the website admin to add sodas to the file
+    // allows admin to change prices of sodas
 })
 
-const main = async () => {
-    const store = await createStore();
-    app.listen(PORT, () => {
-        console.log(`Server has started on http://localhost:${PORT}`)
-    })
-};
+app.get('/sodas', (req, res) => {
+    const sodas = [{ quantity: 100, price: 1, label: 'Sprite' }, { quantity: 100, price: 1, label: 'Dr.Pepper' }, { quantity: 100, price: 1, label: 'Coke' }, { quantity: 100, price: 1, label: 'Squirt' }]
+    // this should be a method to get all sodas from our db
+    res.json(sodas)
+})
 
-main();
+db.sync().then(app.listen(PORT, () => {
+    console.log(`Server has started on http://localhost:${PORT}`)
+}))
+
 
