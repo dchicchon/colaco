@@ -1,37 +1,20 @@
-const { Sequelize, DataTypes } = require('sequelize')
+const { Sequelize, DataTypes } = require('sequelize');
 
-const createStore = () => {
-    const db = new Sequelize({
-        dialect: 'sqlite',
-        storage: './storage.sqlite'
-    })
+const createStore = (testing) => {
+  const db = new Sequelize({
+    logging: false,
+    dialect: 'sqlite',
+    storage: testing ? './testStorage.sqlite' : './storage.sqlite',
+  });
 
-    const Soda = db.define('Soda', {
-        label: DataTypes.STRING,
-        price: DataTypes.FLOAT,
-        quantity: DataTypes.INTEGER
-    })
+  db.define('Soda', {
+    label: DataTypes.STRING,
+    price: DataTypes.FLOAT,
+    quantity: DataTypes.INTEGER,
+  });
 
-    db.authenticate();
-    return db;
-}
+  db.authenticate();
+  return db;
+};
 
-
-const createTestStore = () => {
-    const db = new Sequelize({
-        dialect: 'sqlite',
-        storage: './teststorage.sqlite'
-    })
-
-    const soda = db.define('soda', {
-        label: DataTypes.STRING,
-        price: DataTypes.FLOAT,
-        quantity: DataTypes.INTEGER
-    })
-
-    db.authenticate();
-    db.sync();
-    return db;
-}
-
-module.exports = createStore
+module.exports = { createStore };

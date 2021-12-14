@@ -1,13 +1,13 @@
-import './App.css';
+import React from 'react';
 import SodaMachine from './components/SodaMachine';
+import './App.css';
 
-function App() {
+const App = function () {
   return (
     <div className="App">
-      {/* Lets make a soda machine */}
       <SodaMachine />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,0 @@
-
-const reducer = ({ action, payload }) => {
-
-}
