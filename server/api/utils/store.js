@@ -21,6 +21,16 @@ const createStore = (testing) => {
     },
     quantity: {
       type: DataTypes.INTEGER,
+      validate: {
+        min: {
+          args: [0],
+          msg: 'Quantity must be greater than 0',
+        },
+        max: {
+          args: [1000],
+          msg: 'Cannot fit anymore sodas of this type',
+        },
+      },
     },
   });
 

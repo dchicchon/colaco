@@ -1,5 +1,4 @@
 const app = require('express')();
-// const path = require('path');
 const { createStore } = require('../utils/store');
 
 const db = createStore();
@@ -20,8 +19,12 @@ app.put('/sodas', async (req, res) => {
     price: result.price,
     time: date,
   };
+  const soda = {
+    id: result.id,
+    label: result.label,
+  };
   await db.models.Transaction.create(transaction);
-  res.json(result);
+  res.json(soda);
 });
 
 module.exports = app;

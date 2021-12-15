@@ -21,7 +21,7 @@ const seedSodas = [
   {
     label: 'Mega Pop',
     price: 1,
-    quantity: 50,
+    quantity: 0,
   },
 ];
 

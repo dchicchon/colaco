@@ -7,7 +7,7 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
     return (
       <div className="soda-label">
         <div className="button-wrapper">
-          <button type="button" onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
+          <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
         <div className="text-wrapper">
           {' '}
@@ -18,9 +18,7 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
           {' '}
           -
           {' '}
-          {soda.quantity}
-          {' '}
-          left
+          {(soda.quantity > 0) ? `${soda.quantity} left` : 'OUT'}
         </div>
       </div>
     );
