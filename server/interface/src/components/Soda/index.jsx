@@ -11,7 +11,7 @@ const Soda = function Soda({ soda, toggleUpdateModal }) {
         {soda.label}
       </span>
       <span>
-        {soda.price}
+        {soda.price.toFixed(2)}
       </span>
       <span>
         {soda.quantity}

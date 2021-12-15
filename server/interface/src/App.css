@@ -5,7 +5,8 @@
 .tables {
   display: flex;
   justify-content: center;
-  width: 90%;
+  margin: 0 auto;
+  width: 95%;
 }
 
 .shadow {

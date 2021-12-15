@@ -12,6 +12,7 @@ const SodaContainer = function () {
 
   const getSodas = async () => {
     const result = await apiGetSodas();
+    console.log(result);
     setSodas(result);
   };
 
@@ -19,6 +20,8 @@ const SodaContainer = function () {
     if (showModal) {
       shadow.current.style.background = 'none';
       shadow.current.style.pointerEvents = 'none';
+      getSodas();
+      setSodaToUpdate({});
       setShowModal(false);
     } else {
       shadow.current.style.background = 'lightgrey';

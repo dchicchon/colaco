@@ -8,14 +8,24 @@ const createStore = (testing) => {
   });
 
   db.define('Soda', {
-    label: DataTypes.STRING,
-    price: DataTypes.FLOAT,
-    quantity: DataTypes.INTEGER,
+    label: {
+      type: DataTypes.STRING,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+    },
+    quantity: {
+      type: DataTypes.INTEGER,
+    },
   });
 
   db.define('Transaction', {
-    label: DataTypes.STRING,
-    price: DataTypes.FLOAT,
+    label: {
+      type: DataTypes.STRING,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+    },
   });
 
   db.authenticate();

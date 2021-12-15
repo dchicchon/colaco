@@ -1,6 +1,11 @@
 import React from 'react';
 import './style.css';
 
+const parseDate = (date) => {
+  const newDate = new Date(date);
+  return newDate.toLocaleString();
+};
+
 const Transaction = function ({ transaction }) {
   return (
     <div className="transaction-item">
@@ -11,10 +16,10 @@ const Transaction = function ({ transaction }) {
         {transaction.label}
       </span>
       <span>
-        {transaction.price}
+        {transaction.price.toFixed(2)}
       </span>
       <span>
-        {transaction.createdAt}
+        {parseDate(transaction.createdAt)}
       </span>
     </div>
   );

@@ -10,14 +10,17 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
           <button type="button" onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
         <div className="text-wrapper">
-          $
-          {soda.price}
           {' '}
           {soda.label}
           {' '}
-          :
+          :   $
+          {soda.price.toFixed(2)}
+          {' '}
+          -
           {' '}
           {soda.quantity}
+          {' '}
+          left
         </div>
       </div>
     );

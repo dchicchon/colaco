@@ -10,5 +10,7 @@
     "parserOptions": {
         "ecmaVersion": 13
     },
-    "rules": {}
+    "rules": {
+        "no-param-reassign": "off"
+    }
 }
