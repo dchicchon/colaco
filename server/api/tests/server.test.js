@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../app');
-const seedTestingDB = require('../utils/testSeed');
+const seedTestingDB = require('../testUtils/testSeed');
 
 beforeAll(async () => {
   await seedTestingDB();
@@ -11,7 +11,7 @@ describe('Test requests for server', () => {
     request(app)
       .get('/api/sodas')
       .then((response) => {
-        console.log(response.body);
+        expect(response.body.length).toBe(4);
         expect(response.statusCode).toBe(200);
         done();
       });
@@ -19,6 +19,7 @@ describe('Test requests for server', () => {
   test('It should respond to GET /admin/sodas', (done) => {
     request(app)
       .get('/admin/sodas').then((response) => {
+        expect(response.body.length).toBe(4);
         expect(response.statusCode).toBe(200);
         done();
       });
@@ -42,7 +43,6 @@ describe('Test requests for server', () => {
         return done();
       });
   });
-
   test('It should respond to PUT /admin/sodas', (done) => {
     request(app)
       .put('/admin/sodas')

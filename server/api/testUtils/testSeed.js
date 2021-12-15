@@ -25,7 +25,6 @@ const seedSodas = [
 ];
 
 const seedDatabase = async () => {
-  console.log('Seeding Test Database...');
   const promiseArr = [];
   for (let i = 0; i < seedSodas.length; i += 1) {
     const soda = seedSodas[i];
@@ -33,13 +32,11 @@ const seedDatabase = async () => {
     promiseArr.push(result);
   }
   await Promise.all(promiseArr);
-  console.log('Done seeding database');
 };
 
 const seedTestingDB = async () => {
-  seedDatabase();
   await db.sync({ force: true });
-  console.log('Done Syncing');
+  await seedDatabase();
 };
 
 module.exports = seedTestingDB;
