@@ -1,7 +1,7 @@
 .modal {
     position: absolute;
     z-index: 2;
-    background-color: lightgrey; 
+    background-color: #1c2333;
     padding: 10px;
     border-radius: 25px;
     width: 400px;
@@ -13,4 +13,8 @@
 
 .modal-input {
     margin: 10px;
+}
+
+.modal-input > label > input {
+    margin-left: 5px;
 }

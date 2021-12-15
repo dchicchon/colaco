@@ -6,6 +6,7 @@ beforeAll(async () => {
   await seedTestingDB();
 });
 
+let testSoda = { label: 'TestSoda', price: 1.00, quantity: 100 };
 describe('Test requests for server', () => {
   test('It should respond to GET /api/sodas', (done) => {
     request(app)
@@ -36,9 +37,10 @@ describe('Test requests for server', () => {
     request(app)
       .post('/admin/sodas')
       .set('Content-Type', 'application/json')
-      .send({ label: 'TestSoda', price: 1.00, quantity: 100 })
+      .send(testSoda)
       .expect(200)
-      .end((err) => {
+      .end((err, response) => {
+        testSoda = response.body;
         if (err) return err;
         return done();
       });
@@ -48,10 +50,11 @@ describe('Test requests for server', () => {
       .put('/admin/sodas')
       .set('Content-Type', 'application/json')
       .send({
-        id: '', label: 'TestSoda', price: 1.50, quantity: 50,
+        id: testSoda.id, label: 'TestSoda', price: 1.50, quantity: 50,
       })
       .expect(200)
-      .end((err) => {
+      .end((err, response) => {
+        expect(response.body[0]).toBe(1);
         if (err) return err;
         return done();
       });

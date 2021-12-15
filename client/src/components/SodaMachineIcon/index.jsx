@@ -170,7 +170,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
         strokeDashoffset: 0,
         strokeLinejoin: 'miter',
         strokeMiterlimit: 4,
-        fill: '#fff',
+        fill: '#1c2333',
         fillRule: 'nonzero',
         opacity: 1,
       }}
@@ -187,7 +187,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
         strokeDashoffset: 0,
         strokeLinejoin: 'miter',
         strokeMiterlimit: 4,
-        fill: '#fff',
+        fill: '#1c2333',
         fillRule: 'nonzero',
         opacity: 1,
       }}
@@ -204,7 +204,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
         strokeDashoffset: 0,
         strokeLinejoin: 'miter',
         strokeMiterlimit: 4,
-        fill: '#fff',
+        fill: '#1c2333',
         fillRule: 'nonzero',
         opacity: 1,
       }}
@@ -221,7 +221,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
         strokeDashoffset: 0,
         strokeLinejoin: 'miter',
         strokeMiterlimit: 4,
-        fill: '#fff',
+        fill: '#1c2333',
         fillRule: 'nonzero',
         opacity: 1,
       }}
@@ -238,7 +238,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
         strokeDashoffset: 0,
         strokeLinejoin: 'miter',
         strokeMiterlimit: 4,
-        fill: '#fff',
+        fill: '#1c2333',
         fillRule: 'nonzero',
         opacity: 1,
       }}
@@ -255,7 +255,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
         strokeDashoffset: 0,
         strokeLinejoin: 'miter',
         strokeMiterlimit: 4,
-        fill: '#fff',
+        fill: '#1c2333',
         fillRule: 'nonzero',
         opacity: 1,
       }}
