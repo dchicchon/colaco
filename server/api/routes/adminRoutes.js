@@ -1,27 +1,40 @@
 const app = require('express')();
+const { Soda, Transaction } = require('../models');
 
-const { createStore } = require('../utils/store');
-
-const db = createStore();
-
-app.get('/sodas', async (req, res) => {
-  const sodas = await db.models.Soda.findAll();
-  res.json(sodas);
+app.get('/sodas', (req, res) => {
+  Soda.findAll().then((sodas) => {
+    res.json(sodas);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
 });
 
-app.get('/transactions', async (req, res) => {
-  const transactions = await db.models.Transaction.findAll();
-  res.json(transactions);
+app.get('/transactions', (req, res) => {
+  Transaction.findAll().then((transactions) => {
+    res.json(transactions);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
 });
 
 app.post('/sodas', async (req, res) => {
-  const soda = await db.models.Soda.create(req.body);
-  res.json(soda);
+  Soda.create(req.body).then((soda) => {
+    res.json(soda);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
 });
 
 app.put('/sodas', async (req, res) => {
-  const result = await db.models.Soda.update(req.body, { where: { id: req.body.id } });
-  res.json(result);
+  Soda.update(req.body, { where: { id: req.body.id } }).then((result) => {
+    res.json(result);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
 });
 
 module.exports = app;
