@@ -4,7 +4,7 @@ import Modal from '../Modal';
 import Soda from '../Soda';
 import './style.css';
 
-const SodaContainer = function () {
+const SodaContainer = function SodaContainer() {
   const [sodas, setSodas] = useState([]);
   const [sodaToUpdate, setSodaToUpdate] = useState({});
   const [showModal, setShowModal] = useState(false);
@@ -52,9 +52,9 @@ const SodaContainer = function () {
           <span>Quantity</span>
           <span>Update</span>
         </div>
-        {sodas.length && sodas.map((soda) => (
+        {sodas.length ? sodas.map((soda) => (
           <Soda key={soda.id} soda={soda} toggleUpdateModal={toggleUpdateModal} />
-        ))}
+        )) : 'No sodas found'}
         <button className="addLabel" onClick={toggleModal} type="button">+</button>
       </div>
     </>

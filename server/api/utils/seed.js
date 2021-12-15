@@ -1,6 +1,6 @@
 const { createStore } = require('./store');
 
-const db = createStore(false);
+const db = createStore();
 
 const seedSodas = [
   {

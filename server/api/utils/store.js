@@ -8,6 +8,11 @@ const createStore = (testing) => {
   });
 
   db.define('Soda', {
+    id: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+    },
     label: {
       type: DataTypes.STRING,
     },
@@ -20,6 +25,11 @@ const createStore = (testing) => {
   });
 
   db.define('Transaction', {
+    id: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+    },
     label: {
       type: DataTypes.STRING,
     },

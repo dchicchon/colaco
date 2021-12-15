@@ -263,24 +263,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
           transform="matrix(1.13 0 0 1.13 110.35 453.46)"
           d="M-8.982-.344 4.663 9.357l4.32-7.75L-1.982-9.358z"
         />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 1,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#ddeaff',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(2.35 0 0 .39 254.35 186.78)"
-          d="M-50-.072C-50-27.647-46.325-50-41.791-50h83.582C46.325-50 50-27.647 50-.072v.144C50 27.647 46.325 50 41.791 50h-83.582C-46.325 50-50 27.647-50 .072z"
-          strokeLinecap="round"
-        />
+
       </svg>
     </div>
 

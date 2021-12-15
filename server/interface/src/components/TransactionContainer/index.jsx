@@ -25,9 +25,9 @@ const TransactionContainer = function TransactionContainer() {
         <span>Price</span>
         <span>Time</span>
       </div>
-      {transactions.length && transactions.map((transaction) => (
+      {transactions.length ? transactions.map((transaction) => (
         <Transaction key={transaction.id} transaction={transaction} />
-      ))}
+      )) : 'No history found'}
     </div>
   );
 };

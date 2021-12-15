@@ -7,7 +7,7 @@ const routes = require('./routes');
 const { createStore } = require('./utils/store');
 
 const PORT = process.env.PORT || 4000;
-const db = createStore(false);
+const db = createStore();
 
 app.use(cors());
 app.use(express.json());
