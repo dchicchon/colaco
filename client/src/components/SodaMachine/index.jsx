@@ -7,7 +7,7 @@ import './style.css';
 
 const SodaLabel = function SodaLabel({ soda, buySoda }) {
     return (
-      <div className="soda-label">
+      <div role="document" className="soda-label">
         <div className="button-wrapper">
           <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
