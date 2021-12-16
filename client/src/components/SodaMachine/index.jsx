@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SET_MESSAGE } from '../../utils/actions';
+import { ADD_MESSAGE } from '../../utils/actions';
 import { apiBuySoda, apiGetSodas } from '../../utils/api';
 import { useDispatchContext } from '../../utils/SodaContext';
 import SodaMachineIcon from '../SodaMachineIcon';
@@ -51,11 +51,11 @@ const SodaMachine = function SodaMachine() {
 
     const buySoda = async (id) => {
         apiBuySoda(id).then((result) => {
-          dispatch({ type: SET_MESSAGE, payload: `Soda Purchased: ${result.label}` });
+          dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.label}` });
           downloadJSON(result);
           setNewSodas();
         }).catch((err) => {
-          dispatch({ type: SET_MESSAGE, payload: 'Machine Malfunction, please try again later' });
+          dispatch({ type: ADD_MESSAGE, payload: 'Machine Malfunction, please try again later' });
           console.log(err);
         });
     };
