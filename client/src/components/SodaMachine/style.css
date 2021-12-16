@@ -11,7 +11,7 @@
     height: 400px;
     width: 350px;
     padding: 10px;
-    overflow: auto;
+    overflow: auto; 
     overflow-x: hidden;
     display: flex;
     flex-direction: column;

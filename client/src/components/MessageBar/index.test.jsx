@@ -1,22 +1,29 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
-import { SodaProvider } from '../../utils/SodaContext';
-
+import React, { useReducer } from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
 import MessageBar from '.';
+import reducer from '../../utils/reducer';
+import { DispatchContext, StateContext } from '../../utils/SodaContext';
 
-beforeEach(() => {
-  // setup a DOM element as a render target
-});
+const initialState = {
+    messages: [{ id: 1, text: 'Test Message' }],
+};
 
-afterEach(() => {
-  // cleanup on exiting
-});
-
-it('renders', () => {
-    act(() => {
-        render(<SodaProvider>
+const Wrapper = function Wrapper() {
+    const [state, dispatch] = useReducer(reducer, initialState);
+    return (
+      <DispatchContext.Provider value={dispatch}>
+        <StateContext.Provider value={state}>
           <MessageBar />
-        </SodaProvider>);
+        </StateContext.Provider>
+      </DispatchContext.Provider>
+    );
+};
+
+describe('Renders MessageBar Component', () => {
+    test('Loads Message', async () => {
+        render(<Wrapper />);
+        await waitFor(() => {
+            expect(screen.getByRole('alert')).toHaveTextContent('Test Message');
+        });
     });
 });

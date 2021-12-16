@@ -21,9 +21,8 @@ const MessageBar = function MessageBar() {
     if (state.messages) {
       return (
         <div className="message-bar">
-
           {state.messages.map((message) => (
-            <div key={message.id} className="message">
+            <div role="alert" key={message.id} className="message">
               {message.text}
             </div>
           ))}
