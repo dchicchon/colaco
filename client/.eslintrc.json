@@ -21,6 +21,7 @@
     "rules": {
         "react/prop-types": "off",
         "linebreak-style": "off",
-        "indent": "off"
+        "indent": "off",
+        "import/prefer-default-export": "off"
     }
 }

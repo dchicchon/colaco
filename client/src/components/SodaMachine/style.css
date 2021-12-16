@@ -41,7 +41,7 @@
 }
 
 #soda-selection::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 10px 10px grey;
+    box-shadow: inset 0 0 10px 10px #082e6a;
     border-radius: 5px;
     border: solid 3px transparent;
 }

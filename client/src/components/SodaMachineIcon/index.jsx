@@ -130,7 +130,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
               fontVariant: 'normal',
               fontWeight: 700,
               fontStretch: 'normal',
-              fontFamily: 'STIXIntegralsSm',
+              fontFamily: 'monospace',
               InkscapeFontSpecification: "'STIXIntegralsSm Bold'",
               fill: '#000700',
               fillOpacity: 1,
@@ -147,7 +147,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
               fontVariant: 'normal',
               fontWeight: 700,
               fontStretch: 'normal',
-              fontFamily: 'STIXIntegralsSm',
+              fontFamily: 'monospace',
               InkscapeFontSpecification: "'STIXIntegralsSm Bold'",
               fill: '#000700',
               fillOpacity: 1,
@@ -156,7 +156,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
                 x={-201.156}
                 y={52.836}
               >
-                {'  CO.'}
+                CO.
               </tspan>
             </text>
             <rect

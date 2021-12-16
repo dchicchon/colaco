@@ -1,12 +1,17 @@
 import React from 'react';
 import SodaMachine from './components/SodaMachine';
+import MessageBar from './components/MessageBar';
+import { SodaProvider } from './utils/SodaContext';
 import './App.css';
 
 const App = function App() {
   return (
-    <div className="App">
-      <SodaMachine />
-    </div>
+    <SodaProvider>
+      <div className="App">
+        <SodaMachine />
+        <MessageBar />
+      </div>
+    </SodaProvider>
   );
 };
 
