@@ -14,10 +14,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "lint": "npx eslint . --fix",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npx eslint . --fix"
   },
   "eslintConfig": {
     "extends": [

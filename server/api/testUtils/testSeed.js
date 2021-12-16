@@ -34,4 +34,9 @@ const seedDatabase = async () => {
   await Promise.all(promiseArr);
 };
 
-db.sync({ force: true }).then(seedDatabase);
+const seedTestingDB = async () => {
+  await db.sync({ force: true });
+  await seedDatabase();
+};
+
+module.exports = seedTestingDB;

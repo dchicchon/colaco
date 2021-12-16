@@ -24,7 +24,7 @@ const SodaContainer = function SodaContainer() {
       setSodaToUpdate({});
       setShowModal(false);
     } else {
-      shadow.current.style.background = 'lightgrey';
+      shadow.current.style.background = '#383636';
       shadow.current.style.pointerEvents = 'all';
       setShowModal(true);
     }

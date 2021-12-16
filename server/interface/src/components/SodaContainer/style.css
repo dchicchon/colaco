@@ -12,7 +12,7 @@
 .soda-container-header {
     display: flex;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #85ceff;
 }
 
 .soda-container-header > span {

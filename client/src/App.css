@@ -2,6 +2,10 @@
   padding: 25px;
 }
 
+html {
+  background: #1c2333;
+}
+
 body {
   overflow: hidden;
 }

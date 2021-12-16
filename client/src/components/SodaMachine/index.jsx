@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { SET_MESSAGE } from '../../utils/actions';
 import { apiBuySoda, apiGetSodas } from '../../utils/api';
+import { useDispatchContext } from '../../utils/SodaContext';
 import SodaMachineIcon from '../SodaMachineIcon';
 import './style.css';
 
@@ -7,7 +9,7 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
     return (
       <div className="soda-label">
         <div className="button-wrapper">
-          <button type="button" onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
+          <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
         <div className="text-wrapper">
           {' '}
@@ -18,23 +20,16 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
           {' '}
           -
           {' '}
-          {soda.quantity}
-          {' '}
-          left
+          {(soda.quantity > 0) ? `${soda.quantity} left` : 'OUT'}
         </div>
       </div>
     );
 };
 
-/**
- * sodas is going to be a list of objects, each of those objects will have a field
- * @param count number of sodas
- * @param label type of soda
- * @param price cost of soda
- */
-
 const SodaMachine = function SodaMachine() {
     const [sodas, setSodas] = useState([]);
+    const dispatch = useDispatchContext();
+    // const state = useStateContext();
     const setNewSodas = async () => {
         const apiSodas = await apiGetSodas();
         // console.log(apiSodas)
@@ -55,9 +50,14 @@ const SodaMachine = function SodaMachine() {
     };
 
     const buySoda = async (id) => {
-        const result = await apiBuySoda(id); // based on result, download json;
-        downloadJSON(result);
-        setNewSodas();
+        apiBuySoda(id).then((result) => {
+          dispatch({ type: SET_MESSAGE, payload: 'Soda Purchased' });
+          downloadJSON(result);
+          setNewSodas();
+        }).catch((err) => {
+          dispatch({ type: SET_MESSAGE, payload: 'Machine Malfunction, please try again later' });
+          console.log(err);
+        });
     };
 
     useEffect(() => {
