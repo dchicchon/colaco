@@ -5,265 +5,275 @@ const SodaMachineIcon = function SodaMachineIcon() {
   return (
     <div className="svg-wrapper">
       <svg
+        width="297mm"
+        height="210mm"
+        viewBox="0 0 297 210"
         xmlns="http://www.w3.org/2000/svg"
-        width="100%"
-        height="100%"
-        viewBox="0 0 500 500"
-        // xmlSpace="preserve"
       >
-        <path
+        <g
           style={{
-        stroke: '#000',
-        strokeWidth: 1,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#0970b5',
-        fillRule: 'nonzero',
-        opacity: 1,
+        display: 'inline',
       }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(1.03 0 0 1.52 250 250)"
-          d="M-146.398-104.167c0-23.323 27.806-42.23 62.105-42.23H84.293c34.3 0 62.105 18.907 62.105 42.23v208.334c0 23.323-27.806 42.23-62.105 42.23H-84.293c-34.3 0-62.105-18.907-62.105-42.23z"
-          strokeLinecap="round"
-        />
-        <path
+        >
+          <rect
+            style={{
+          fill: '#502d16',
+          fillOpacity: 1,
+          fillRule: 'evenodd',
+          stroke: '#000',
+          strokeWidth: 3.17028,
+          strokeMiterlimit: 4,
+          strokeDasharray: 'none',
+          strokeOpacity: 1,
+        }}
+            width={40.852}
+            height={307.653}
+            x={174.13}
+            y={-302.486}
+            ry={8.784}
+            transform="rotate(90)"
+          />
+          <path
+            style={{
+          fill: '#0ebbdc',
+          fillOpacity: 1,
+          fillRule: 'evenodd',
+          stroke: '#000',
+          strokeWidth: 0.696861,
+          strokeMiterlimit: 4,
+          strokeDasharray: 'none',
+          strokeOpacity: 1,
+        }}
+            transform="rotate(-90)"
+            d="M-31.472-30.003h15.09v34.14h-15.09zM-63.047-30.003h15.09v34.14h-15.09zM-94.621-30.003h15.09v34.14h-15.09zM-126.196-30.003h15.09v34.14h-15.09zM-157.77-30.003h15.09v34.14h-15.09zM-15.685-12.585h15.09v34.14h-15.09zM-31.472 4.834h15.09v34.14h-15.09zM-47.259-12.585h15.09v34.14h-15.09zM-63.047 4.834h15.09v34.14h-15.09zM-78.834-12.585h15.09v34.14h-15.09zM-94.621 4.834h15.09v34.14h-15.09zM-110.408-12.585h15.09v34.14h-15.09zM-126.196 4.834h15.09v34.14h-15.09zM-141.983-12.585h15.09v34.14h-15.09zM-157.77 4.834h15.09v34.14h-15.09zM-173.557-12.585h15.09v34.14h-15.09zM-15.685 22.252h15.09v34.14h-15.09zM-31.472 39.671h15.09v34.14h-15.09zM-47.259 22.252h15.09v34.14h-15.09zM-63.047 39.671h15.09v34.14h-15.09zM-78.834 22.252h15.09v34.14h-15.09zM-94.621 39.671h15.09v34.14h-15.09zM-110.408 22.252h15.09v34.14h-15.09zM-126.196 39.671h15.09v34.14h-15.09zM-141.983 22.252h15.09v34.14h-15.09zM-157.77 39.671h15.09v34.14h-15.09zM-173.557 22.252h15.09v34.14h-15.09zM-15.685 57.09h15.09v34.14h-15.09zM-31.472 74.508h15.09v34.14h-15.09zM-47.259 57.09h15.09v34.14h-15.09zM-63.047 74.508h15.09v34.14h-15.09zM-78.834 57.09h15.09v34.14h-15.09zM-94.621 74.508h15.09v34.14h-15.09zM-110.408 57.09h15.09v34.14h-15.09zM-126.196 74.508h15.09v34.14h-15.09zM-141.983 57.09h15.09v34.14h-15.09zM-157.77 74.508h15.09v34.14h-15.09zM-173.557 57.09h15.09v34.14h-15.09zM-15.685 91.927h15.09v34.14h-15.09zM-31.472 109.346h15.09v34.14h-15.09zM-47.259 91.927h15.09v34.14h-15.09zM-63.047 109.346h15.09v34.14h-15.09zM-78.834 91.927h15.09v34.14h-15.09zM-94.621 109.346h15.09v34.14h-15.09zM-110.408 91.927h15.09v34.14h-15.09zM-126.196 109.346h15.09v34.14h-15.09zM-141.983 91.927h15.09v34.14h-15.09zM-157.77 109.346h15.09v34.14h-15.09zM-173.557 91.927h15.09v34.14h-15.09zM-15.685 126.764h15.09v34.14h-15.09zM-31.472 144.183h15.09v34.14h-15.09zM-47.259 126.764h15.09v34.14h-15.09zM-63.047 144.183h15.09v34.14h-15.09zM-78.834 126.764h15.09v34.14h-15.09zM-94.621 144.183h15.09v34.14h-15.09zM-110.408 126.764h15.09v34.14h-15.09zM-126.196 144.183h15.09v34.14h-15.09zM-141.983 126.764h15.09v34.14h-15.09zM-157.77 144.183h15.09v34.14h-15.09zM-173.557 126.764h15.09v34.14h-15.09zM-15.685 161.601h15.09v34.14h-15.09zM-31.472 179.02h15.09v34.14h-15.09zM-47.259 161.601h15.09v34.14h-15.09zM-63.047 179.02h15.09v34.14h-15.09zM-78.834 161.601h15.09v34.14h-15.09zM-94.621 179.02h15.09v34.14h-15.09zM-110.408 161.601h15.09v34.14h-15.09zM-126.196 179.02h15.09v34.14h-15.09zM-141.983 161.601h15.09v34.14h-15.09zM-157.77 179.02h15.09v34.14h-15.09zM-173.557 161.601h15.09v34.14h-15.09zM-15.685 196.439h15.09v34.14h-15.09zM-31.472 213.857h15.09v34.14h-15.09zM-47.259 196.439h15.09v34.14h-15.09zM-63.047 213.857h15.09v34.14h-15.09zM-78.834 196.439h15.09v34.14h-15.09zM-94.621 213.857h15.09v34.14h-15.09zM-110.408 196.439h15.09v34.14h-15.09zM-126.196 213.857h15.09v34.14h-15.09zM-141.983 196.439h15.09v34.14h-15.09zM-157.77 213.857h15.09v34.14h-15.09zM-173.557 196.439h15.09v34.14h-15.09zM-15.685 231.276h15.09v34.14h-15.09zM-31.472 248.695h15.09v34.14h-15.09zM-47.259 231.276h15.09v34.14h-15.09zM-63.047 248.695h15.09v34.14h-15.09zM-78.834 231.276h15.09v34.14h-15.09zM-94.621 248.695h15.09v34.14h-15.09zM-110.408 231.276h15.09v34.14h-15.09zM-126.196 248.695h15.09v34.14h-15.09zM-141.983 231.276h15.09v34.14h-15.09zM-157.77 248.695h15.09v34.14h-15.09zM-173.557 231.276h15.09v34.14h-15.09zM-15.685 266.113h15.09v34.14h-15.09zM-31.472 283.532h15.09v34.14h-15.09zM-47.259 266.113h15.09v34.14h-15.09zM-63.047 283.532h15.09v34.14h-15.09zM-78.834 266.113h15.09v34.14h-15.09zM-94.621 283.532h15.09v34.14h-15.09zM-110.408 266.113h15.09v34.14h-15.09zM-126.196 283.532h15.09v34.14h-15.09zM-141.983 266.113h15.09v34.14h-15.09zM-157.77 283.532h15.09v34.14h-15.09zM-173.557 266.113h15.09v34.14h-15.09zM-15.685 300.951h15.09v34.14h-15.09zM-47.259 300.951h15.09v34.14h-15.09zM-78.834 300.951h15.09v34.14h-15.09zM-110.408 300.951h15.09v34.14h-15.09zM-141.983 300.951h15.09v34.14h-15.09zM-173.557 300.951h15.09v34.14h-15.09z"
+          />
+        </g>
+        <g
           style={{
-        stroke: '#50d13d',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#fff312',
-        fillRule: 'nonzero',
-        opacity: 1,
+        display: 'inline',
       }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(.13 .09 -2.31 3.56 331.3 301.69)"
-          d="M-50-50H50V50H-50z"
-        />
-        <path
-          style={{
-        stroke: '#50d13d',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#fff312',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(.13 .09 -1.19 1.84 124.26 109.81)"
-          d="M-50-50H50V50H-50z"
-        />
-        <path
-          style={{
-        stroke: '#50d13d',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#fff312',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(.13 .09 -1.44 2.22 368.3 372.48)"
-          d="M-50-50H50V50H-50z"
-        />
-        <path
-          style={{
-        stroke: '#50d13d',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#fff312',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(.13 .09 -2.89 4.44 253.59 234.97)"
-          d="M-50-50H50V50H-50z"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 1,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: 'none',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(5.54 0 0 1.52 250 398.23)"
-          d="M-14.154-14.154h28.308v28.308h-28.308z"
-          strokeLinecap="round"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 1,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#bcb4b2',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(5.52 0 0 1.26 250 398.93)"
-          d="M-12.916-12.916h25.832v25.832h-25.832z"
-          strokeLinecap="round"
-        />
-        <g>
+        >
           <text
             xmlSpace="preserve"
-            fontFamily="Permanent Marker"
-            fontSize={30}
             style={{
+          fontStyle: 'normal',
+          fontWeight: 400,
+          fontSize: '10.5833px',
+          lineHeight: 1.25,
+          fontFamily: 'sans-serif',
+          fill: '#000',
+          fillOpacity: 1,
           stroke: 'none',
-          strokeWidth: 1,
-          strokeDasharray: 'none',
-          strokeLinecap: 'butt',
-          strokeDashoffset: 0,
-          strokeLinejoin: 'miter',
-          strokeMiterlimit: 4,
-          fill: '#fff',
-          fillRule: 'nonzero',
-          opacity: 1,
-          whiteSpace: 'pre',
+          strokeWidth: 0.264583,
         }}
-            transform="matrix(1.33 0 0 1.33 252.85 93.46)"
-          >
-            <tspan x={-61.41} y={-10.24}>
-              Itential
-            </tspan>
-            <tspan x={-61.41} y={29.09}>
-              Drinks
-            </tspan>
-          </text>
+            x={100.456}
+            y={162.626}
+          />
+          <g transform="rotate(90 141.939 149.858)">
+            <rect
+              style={{
+            display: 'inline',
+            fill: '#0073a0',
+            fillOpacity: 1,
+            fillRule: 'evenodd',
+            stroke: '#000',
+            strokeWidth: 4.38558,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              width={169.088}
+              height={112.96}
+              x={15.723}
+              y={-189.916}
+              ry={11.605}
+              transform="scale(1 -1)"
+            />
+            <path
+              style={{
+            display: 'inline',
+            fill: '#0073a0',
+            fillOpacity: 1,
+            fillRule: 'evenodd',
+            stroke: '#000',
+            strokeWidth: 4.29411,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              d="M34.724 93.993a11.59 11.59 0 0 0-11.614 11.615v89.822a11.59 11.59 0 0 0 11.614 11.615h138.748a11.59 11.59 0 0 0 11.615-11.615v-89.822a11.59 11.59 0 0 0-11.615-11.615z"
+            />
+            <text
+              xmlSpace="preserve"
+              style={{
+            fontStyle: 'normal',
+            fontVariant: 'normal',
+            fontWeight: 700,
+            fontStretch: 'normal',
+            fontSize: '10.5833px',
+            lineHeight: 1.15,
+            fontFamily: 'STIXIntegralsSm',
+            InkscapeFontSpecification: "'STIXIntegralsSm Bold'",
+            display: 'inline',
+            fill: '#000700',
+            fillOpacity: 1,
+            stroke: 'none',
+            strokeWidth: 0.264583,
+          }}
+              x={-201.156}
+              y={40.27}
+              transform="rotate(-90)"
+            >
+              <tspan
+                style={{
+              fontStyle: 'normal',
+              fontVariant: 'normal',
+              fontWeight: 700,
+              fontStretch: 'normal',
+              fontFamily: 'STIXIntegralsSm',
+              InkscapeFontSpecification: "'STIXIntegralsSm Bold'",
+              fill: '#000700',
+              fillOpacity: 1,
+              strokeWidth: 0.264583,
+            }}
+                x={-201.156}
+                y={40.27}
+              >
+                {'SODA '}
+              </tspan>
+              <tspan
+                style={{
+              fontStyle: 'normal',
+              fontVariant: 'normal',
+              fontWeight: 700,
+              fontStretch: 'normal',
+              fontFamily: 'STIXIntegralsSm',
+              InkscapeFontSpecification: "'STIXIntegralsSm Bold'",
+              fill: '#000700',
+              fillOpacity: 1,
+              strokeWidth: 0.264583,
+            }}
+                x={-201.156}
+                y={52.836}
+              >
+                {'  CO.'}
+              </tspan>
+            </text>
+            <rect
+              style={{
+            display: 'inline',
+            fill: '#004366',
+            fillOpacity: 0.979757,
+            stroke: '#000',
+            strokeWidth: 3,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              width={20.47}
+              height={56.104}
+              x={144.43}
+              y={122.064}
+              ry={8.042}
+            />
+            <text
+              xmlSpace="preserve"
+              style={{
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '2.11667px',
+            lineHeight: 1.25,
+            fontFamily: 'sans-serif',
+            display: 'inline',
+            fill: '#000',
+            fillOpacity: 1,
+            stroke: 'none',
+            strokeWidth: 0.264583,
+          }}
+              x={-129.464}
+              y={128.515}
+              transform="rotate(-90)"
+            >
+              <tspan
+                style={{
+              fontSize: '2.11667px',
+              strokeWidth: 0.264583,
+            }}
+                x={-129.464}
+                y={128.515}
+              >
+                soda os v1.0.5
+              </tspan>
+            </text>
+            <rect
+              style={{
+            display: 'inline',
+            fill: '#0ff',
+            fillOpacity: 1,
+            stroke: '#000',
+            strokeWidth: 4.09099,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              width={73.786}
+              height={95.482}
+              x={59.283}
+              y={102.939}
+              ry={15.877}
+            />
+            <rect
+              style={{
+            fill: '#004367',
+            fillOpacity: 1,
+            fillRule: 'evenodd',
+            stroke: '#000',
+            strokeWidth: 1.79203,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              width={4.733}
+              height={15.067}
+              x={137.842}
+              y={99.283}
+              ry={0.657}
+            />
+            <ellipse
+              style={{
+            fill: '#fff',
+            fillOpacity: 1,
+            fillRule: 'evenodd',
+            stroke: '#000',
+            strokeWidth: 1,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              cx={147.77}
+              cy={110.794}
+              rx={2.381}
+              ry={2.183}
+            />
+            <ellipse
+              style={{
+            display: 'inline',
+            fill: '#fff',
+            fillOpacity: 1,
+            fillRule: 'evenodd',
+            stroke: '#000',
+            strokeWidth: 1,
+            strokeMiterlimit: 4,
+            strokeDasharray: 'none',
+            strokeOpacity: 1,
+          }}
+              cx={147.77}
+              cy={104.114}
+              rx={2.381}
+              ry={2.183}
+            />
+          </g>
         </g>
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#1c2333',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="translate(251.61 12.92)"
-          d="M-93.11 13.612H93.11v-27.224H-93.11v27.224"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#1c2333',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(0 2.19 -3.3 0 446.33 247.99)"
-          d="M-93.11 13.612H93.11v-27.224H-93.11v27.224"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#1c2333',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(2.19 0 0 .86 256.82 485.27)"
-          d="M-93.11 13.612H93.11v-27.224H-93.11v27.224"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#1c2333',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(0 2.19 -3.57 0 49.29 240.75)"
-          d="M-93.11 13.612H93.11v-27.224H-93.11v27.224"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#1c2333',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(1.07 0 0 1.07 389.44 26.87)"
-          d="m2.931-19.813-19.2 29.452 12.064 10.174L16.27-11z"
-        />
-        <path
-          style={{
-        stroke: '#000',
-        strokeWidth: 0,
-        strokeDasharray: 'none',
-        strokeLinecap: 'butt',
-        strokeDashoffset: 0,
-        strokeLinejoin: 'miter',
-        strokeMiterlimit: 4,
-        fill: '#1c2333',
-        fillRule: 'nonzero',
-        opacity: 1,
-      }}
-          vectorEffect="non-scaling-stroke"
-          transform="matrix(1.13 0 0 1.13 110.35 453.46)"
-          d="M-8.982-.344 4.663 9.357l4.32-7.75L-1.982-9.358z"
-        />
-
       </svg>
     </div>
 

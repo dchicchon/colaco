@@ -2,23 +2,24 @@
     width: 500px;
     margin: 0 auto;
     position: relative;
-    top: 200px;
 }
 
 #soda-selection {
     position: relative;
-    top: -430px;
+    top: -720px;
+    left: 35px;
     height: 400px;
+    width: 350px;
     padding: 10px;
-
     overflow: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-gap: 10px;
     gap: 10px;
+    /* border: 10px solid red; */
+    border-radius: 35px;
 
-    background: #b3fff7;
-    border: 2px solid black;
 }
 
 @media screen and (max-width: 1450px) {
@@ -26,9 +27,8 @@
         top: 140px;
     }
     #soda-selection {
-        height: 350px;
+        height: 265px;
     }
-
 }
 
 #soda-selection::-webkit-scrollbar {
@@ -49,10 +49,12 @@
 .soda-label {
     display: flex;
     border-radius: 25px;
+    font-family: monospace;
+    color: #15d2ff;
     text-align: center;
-    background: #ddeaff;
+    background: #082e6a;
     border: 2px solid black;
-    height: 50px;
+    height: 100px;
     width: 90%;
 }
 .text-wrapper {
