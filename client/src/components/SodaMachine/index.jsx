@@ -54,9 +54,8 @@ const SodaMachine = function SodaMachine() {
           dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.label}` });
           downloadJSON(result);
           setNewSodas();
-        }).catch((err) => {
+        }).catch(() => {
           dispatch({ type: ADD_MESSAGE, payload: 'Machine Malfunction, please try again later' });
-          console.log(err);
         });
     };
 

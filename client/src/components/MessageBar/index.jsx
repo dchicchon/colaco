@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { REMOVE_MESSAGE } from '../../utils/actions';
-// import { usePrevious } from '../../utils/helpers';
 import { useDispatchContext, useStateContext } from '../../utils/SodaContext';
 import './style.css';
 
