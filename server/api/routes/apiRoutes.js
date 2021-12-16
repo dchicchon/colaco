@@ -11,6 +11,24 @@ app.get('/sodas', async (req, res) => {
   });
 });
 
+app.post('/sodas', async (req, res) => {
+  Soda.create(req.body).then((soda) => {
+    res.json(soda);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
+});
+
+app.put('/sodas/:id', async (req, res) => {
+  Soda.update(req.body, { where: { id: req.params.id } }).then((result) => {
+    res.json(result);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
+});
+
 // This is a post to buy a soda from the user
 app.put('/sodas', async (req, res) => {
   await Soda.decrement('quantity', { where: { id: req.body.id } });
@@ -27,6 +45,15 @@ app.put('/sodas', async (req, res) => {
   };
   await Transaction.create(transaction);
   res.json(soda);
+});
+
+app.get('/transactions', (req, res) => {
+  Transaction.findAll().then((transactions) => {
+    res.json(transactions);
+  }).catch((err) => {
+    res.status(500);
+    res.json(err);
+  });
 });
 
 module.exports = app;

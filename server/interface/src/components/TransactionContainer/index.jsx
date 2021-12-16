@@ -7,7 +7,6 @@ const TransactionContainer = function TransactionContainer() {
   const [transactions, setTrasanctions] = useState([]);
 
   const getTransactions = async () => {
-    console.log('Getting Transactions');
     const result = await apiGetTransactions();
     setTrasanctions(result);
   };

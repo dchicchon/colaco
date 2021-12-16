@@ -12,7 +12,6 @@ const SodaContainer = function SodaContainer() {
 
   const getSodas = async () => {
     const result = await apiGetSodas();
-    console.log(result);
     setSodas(result);
   };
 

@@ -18,11 +18,8 @@ const wrapper = ({ children }) => (
   </DispatchContext.Provider>
 );
 
-// const mockUseDispatchContext = jest.fn().mockImplementation(() => (dispatch));
-// const mockUseStateContext = jest.fn().mockImplementation(() => (initialState));
-
-describe('useStateContext test', () => {
-  test('should return state and dispatch ', () => {
+describe('useContext test', () => {
+  test('should return state and dispatch from both providers ', () => {
     render(<SodaProvider />);
     const { result: state } = renderHook(() => useStateContext(), { wrapper });
     const { result: dispatch } = renderHook(() => useDispatchContext(), { wrapper });
