@@ -6,9 +6,9 @@
 
 #soda-selection {
     position: relative;
-    top: -728px;
+    top: -508px;
     left: 45px;
-    height: 400px;
+    height: 311px;
     width: 350px;
     padding: 10px;
     overflow: auto; 
@@ -18,7 +18,7 @@
     align-items: center;
     grid-gap: 10px;
     gap: 10px;
-    border-radius: 35px;
+    border-radius: 10px;
 
 }
 
