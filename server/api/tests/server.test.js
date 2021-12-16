@@ -1,13 +1,21 @@
 const request = require('supertest');
+// const fs = require('fs');
 const app = require('../app');
 const seedTestingDB = require('../testUtils/testSeed');
 
-beforeAll(async () => {
-  await seedTestingDB();
-});
-
 let testSoda = { label: 'TestSoda', price: 1.00, quantity: 100 };
 describe('Test requests for server', () => {
+  beforeAll(async () => {
+    await seedTestingDB();
+  });
+  afterAll(async () => {
+    // try {
+    //   fs.unlinkSync('../test.sqlite');
+    // } catch (err) {
+    //   console.error(err);
+    // }
+  });
+
   test('It should respond to GET /api/sodas', (done) => {
     request(app)
       .get('/api/sodas')
