@@ -2,9 +2,9 @@
     z-index: -1;
     transform: scale(1.25) translateY(50px) translateX(-300px);
 }
-
+/* 
 @media screen and (max-width: 1450px) {
     .svg-wrapper {
         transform: scale(1.15) translateY(-150px) translateX(-300px);
     }
-}
+} */
