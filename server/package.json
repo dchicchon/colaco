@@ -7,10 +7,10 @@
     "start": "concurrently \"cd interface && npm start\" \"cd api && npm start \"",
     "develop": "concurrently \"cd interface && npm start\" \"cd api && npm run develop\"",
     "production": "cd api && npm start",
+    "test": "concurrently \"cd api && npm test\"",
     "deploy": "",
     "install": "concurrently \"cd interface && npm install\" \"cd api && npm install\"",
-    "lint": "concurrently \"cd interface && npm run lint\" \"cd api && npm run lint\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "concurrently \"cd interface && npm run lint\" \"cd api && npm run lint\""
   },
   "keywords": [],
   "author": "",

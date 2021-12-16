@@ -9,7 +9,7 @@ const sodas = [{
    }];
 
 const server = setupServer(
-    rest.get('http://localhost:3000/api/sodas', (req, res, ctx) => res(ctx.json(sodas))),
+    rest.get(`${process.env.REACT_APP_BASE_URL}/api/sodas`, (req, res, ctx) => res(ctx.json(sodas))),
 );
 
 beforeAll(() => server.listen());

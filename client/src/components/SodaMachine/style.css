@@ -3,7 +3,18 @@
     margin: 0 auto;
     position: relative;
 }
-
+@media screen and (max-height: 900px) {
+    #soda-machine {
+        bottom: 100px;
+        transform: scale(0.85);
+    }
+}
+@media screen and (max-height: 700px) {
+    #soda-machine {
+        bottom: 200px;
+        transform: scale(0.75);
+    }
+}
 #soda-selection {
     position: relative;
     top: -508px;
@@ -20,39 +31,18 @@
     gap: 10px;
     border-radius: 10px;
 }
-
-@media screen and (max-height: 900px) {
-    #soda-machine {
-        bottom: 100px;
-        transform: scale(0.85);
-    }
-    /* #soda-selection {
-        height: 283px;
-    } */
-}
-
-@media screen and (max-height: 700px) {
-    #soda-machine {
-        bottom: 200px;
-        transform: scale(0.75);
-    }
-}
-
 #soda-selection::-webkit-scrollbar {
     width: 10px;
 }
-
 #soda-selection::-webkit-scrollbar-track {
     background: transparent;
 }
-
 #soda-selection::-webkit-scrollbar-thumb {
     background-color: #082e6a;
     border-radius: 25px;
     border-left: none;
     border-right: none;
 }
-
 #soda-selection::-webkit-scrollbar-track-piece:end {
     background: transparent;
     margin-bottom: 35px;
@@ -61,7 +51,6 @@
     background: transparent;
     margin-top: 35px;
 }
-
 .soda-label {
     display: flex;
     border-radius: 25px;
@@ -82,7 +71,6 @@
     width: 15%;
     padding: 5px;
 }
-
 .soda-button {
     height: 35px;
     width: 35px;
@@ -90,7 +78,6 @@
     transition: background-color 0.25s;
     border-radius: 100%;
 }
-
 .soda-button:hover {
     background-color: rgb(45, 100, 218);
     cursor: pointer;

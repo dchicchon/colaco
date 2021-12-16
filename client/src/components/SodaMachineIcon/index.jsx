@@ -240,8 +240,9 @@ const SodaMachineIcon = function SodaMachineIcon() {
               ry={0.657}
             />
             <ellipse
+              className="soda-svg-button-1"
               style={{
-            fill: '#fff',
+            // fill: '#fff',
             fillOpacity: 1,
             fillRule: 'evenodd',
             stroke: '#000',
@@ -256,9 +257,10 @@ const SodaMachineIcon = function SodaMachineIcon() {
               ry={2.183}
             />
             <ellipse
+              className="soda-svg-button-2"
               style={{
             display: 'inline',
-            fill: '#fff',
+            // fill: '#fff',
             fillOpacity: 1,
             fillRule: 'evenodd',
             stroke: '#000',

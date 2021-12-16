@@ -18,7 +18,7 @@
     "start:win32": "set PORT=3001 && react-scripts start",
     "start:default": "export PORT=3001 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "lint": "npx eslint . --fix",
     "eject": "react-scripts eject"
   },
