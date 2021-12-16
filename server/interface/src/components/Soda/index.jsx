@@ -3,7 +3,7 @@ import './style.css';
 
 const Soda = function Soda({ soda, toggleUpdateModal }) {
   return (
-    <div className="soda-item">
+    <div className="soda-item" role="document">
       <span>
         {soda.id}
       </span>

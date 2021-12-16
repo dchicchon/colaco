@@ -22,6 +22,8 @@
         "react/prop-types": "off",
         "linebreak-style": "off",
         "indent": "off",
+        "react/jsx-closing-tag-location": "off",
+        "react/no-array-index-key": "off",
         "import/prefer-default-export": "off"
     }
 }

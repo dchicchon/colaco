@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SET_MESSAGE } from '../../utils/actions';
+import { ADD_MESSAGE } from '../../utils/actions';
 import { apiBuySoda, apiGetSodas } from '../../utils/api';
 import { useDispatchContext } from '../../utils/SodaContext';
 import SodaMachineIcon from '../SodaMachineIcon';
@@ -7,7 +7,7 @@ import './style.css';
 
 const SodaLabel = function SodaLabel({ soda, buySoda }) {
     return (
-      <div className="soda-label">
+      <div role="document" className="soda-label">
         <div className="button-wrapper">
           <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
@@ -51,12 +51,11 @@ const SodaMachine = function SodaMachine() {
 
     const buySoda = async (id) => {
         apiBuySoda(id).then((result) => {
-          dispatch({ type: SET_MESSAGE, payload: 'Soda Purchased' });
+          dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.label}` });
           downloadJSON(result);
           setNewSodas();
-        }).catch((err) => {
-          dispatch({ type: SET_MESSAGE, payload: 'Machine Malfunction, please try again later' });
-          console.log(err);
+        }).catch(() => {
+          dispatch({ type: ADD_MESSAGE, payload: 'Machine Malfunction, please try again later' });
         });
     };
 

@@ -1,14 +1,14 @@
 import React, { createContext, useContext, useReducer } from 'react';
 import reducer from './reducer';
 
-const StateContext = createContext();
-const DispatchContext = createContext();
+export const StateContext = createContext();
+export const DispatchContext = createContext();
 
 export const useStateContext = () => useContext(StateContext);
 export const useDispatchContext = () => useContext(DispatchContext);
 
-const initialState = {
-    message: 'Hey there cowboy',
+ const initialState = {
+    messages: [],
 };
 
 export const SodaProvider = function SodaProvider({ children }) {

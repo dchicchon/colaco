@@ -8,7 +8,7 @@ const parseDate = (date) => {
 
 const Transaction = function ({ transaction }) {
   return (
-    <div className="transaction-item">
+    <div className="transaction-item" role="document">
       <span>
         {transaction.id}
       </span>
