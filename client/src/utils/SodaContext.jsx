@@ -8,7 +8,7 @@ export const useStateContext = () => useContext(StateContext);
 export const useDispatchContext = () => useContext(DispatchContext);
 
 const initialState = {
-    message: 'Hey there cowboy',
+    message: '',
 };
 
 export const SodaProvider = function SodaProvider({ children }) {

@@ -16,7 +16,7 @@ bottom: 100px;
     border: 10px solid black;
     border-radius: 25px;
     background-color: rgb(0, 115, 160);
-    animation: fade 5s forwards;
+    animation: fade 5s ease-out;
 
 }
 

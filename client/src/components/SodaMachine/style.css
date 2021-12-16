@@ -6,8 +6,8 @@
 
 #soda-selection {
     position: relative;
-    top: -720px;
-    left: 35px;
+    top: -728px;
+    left: 45px;
     height: 400px;
     width: 350px;
     padding: 10px;
@@ -27,7 +27,7 @@
         top: 140px;
     }
     #soda-selection {
-        height: 265px;
+        height: 283px;
     }
 }
 
@@ -36,14 +36,23 @@
 }
 
 #soda-selection::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 10px 10px transparent;
-    border: solid 3px transparent;
+    background: transparent;
 }
 
 #soda-selection::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 10px 10px #082e6a;
-    border-radius: 5px;
-    border: solid 3px transparent;
+    background-color: #082e6a;
+    border-radius: 25px;
+    border-left: none;
+    border-right: none;
+}
+
+#soda-selection::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 35px;
+}
+#soda-selection::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 35px;
 }
 
 .soda-label {
@@ -54,7 +63,8 @@
     text-align: center;
     background: #082e6a;
     border: 2px solid black;
-    height: 100px;
+    height: 125px;
+    padding: 10px;
     width: 90%;
 }
 .text-wrapper {
