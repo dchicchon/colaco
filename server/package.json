@@ -8,7 +8,7 @@
     "develop": "concurrently \"cd interface && npm start\" \"cd api && npm run develop\"",
     "test": "concurrently \"cd api && npm test\" \"cd interface && npm test\"",
     "production": "cd api && npm start",
-    "deploy": "",
+    "build":"cd interface && npm run build",
     "install": "concurrently \"cd interface && npm install\" \"cd api && npm install\"",
     "lint": "concurrently \"cd interface && npm run lint\" \"cd api && npm run lint\""
   },

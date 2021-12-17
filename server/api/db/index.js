@@ -12,5 +12,4 @@ const db = isTest()
     dialect: 'sqlite',
     storage: './storage.sqlite',
   });
-
 module.exports = db;
