@@ -13,7 +13,7 @@
     "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
     "lint": "concurrently \" cd client && npm run lint\" \"cd server && npm run lint\"  ",
     "prepare": "husky install",
-    "build":"concurrently \"cd client && npm run build\" \"cd server && npm run build\""
+    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\""
   },
   "keywords": [],
   "author": "",
