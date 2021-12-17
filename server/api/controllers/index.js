@@ -11,20 +11,25 @@ module.exports = {
   },
 
   buySoda: async (req, res) => {
-    await Soda.decrement('quantity', { where: { id: req.body.id } });
     const result = await Soda.findOne({ where: { id: req.body.id } });
-    const date = new Date();
-    const transaction = {
-      label: result.label,
-      price: result.price,
-      time: date,
-    };
-    const soda = {
-      id: result.id,
-      label: result.label,
-    };
-    await Transaction.create(transaction);
-    res.json(soda);
+    if (result.quantity > 0) {
+      await Soda.decrement('quantity', { where: { id: req.body.id } });
+      const date = new Date();
+      const transaction = {
+        label: result.label,
+        price: result.price,
+        time: date,
+      };
+      const soda = {
+        id: result.id,
+        label: result.label,
+      };
+      await Transaction.create(transaction);
+      res.json(soda);
+    } else {
+      res.status(400);
+      res.json({ error: 'No more soda to dispense' });
+    }
   },
 
   updateSoda: (req, res) => {

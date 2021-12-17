@@ -14,7 +14,14 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
     if (addBool) {
       interval.current = setInterval(() => setQuantity((prevState) => prevState + 1), 50);
     } else {
-      interval.current = setInterval(() => setQuantity((prevState) => prevState - 1), 50);
+      interval.current = setInterval(() => {
+        setQuantity((prevState) => {
+          if (prevState) {
+            return prevState - 1;
+          }
+          return prevState;
+        });
+      }, 50);
     }
   };
 
@@ -87,9 +94,9 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
           Quantity
         </label>
         <div id="quantity-button-group">
-          <button className="rounded-button" onMouseUp={() => clearInterval(interval.current)} onMouseDown={() => changeQuantity(false)} type="button">-</button>
+          <button className="rounded-button" onMouseUp={() => clearInterval(interval.current)} onMouseLeave={() => clearInterval(interval.current)} onMouseDown={() => changeQuantity(false)} type="button">-</button>
           <span>{quantity}</span>
-          <button className="rounded-button" onMouseUp={() => clearInterval(interval.current)} onMouseDown={() => changeQuantity(true)} type="button">+</button>
+          <button className="rounded-button" onMouseUp={() => clearInterval(interval.current)} onMouseLeave={() => clearInterval(interval.current)} onMouseDown={() => changeQuantity(true)} type="button">+</button>
         </div>
       </div>
       <div id="modal-button-group">
