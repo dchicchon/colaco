@@ -25,3 +25,45 @@ html {
   height: 100%;
   width: 100%;
 }
+
+.rounded-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+.main-button {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.main-button,
+.rounded-button {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #85ceff;
+  background: none;
+  color: #85ceff;
+  transition: background-color 0.5s;
+}
+
+.main-button:hover,
+.rounded-button:hover {
+  background-color: #3b4666;
+}
+
+.tool-tip {
+  position: relative;
+}
+
+.tool-tip:hover::after {
+  content: attr(data-desc);
+  position: absolute;
+  outline: none;
+  right: -40px;
+  width: 100px;
+  border: 1px solid #85ceff;
+  border-radius: 10px;
+  bottom: 35px;
+  background-color: #1c2333;
+}

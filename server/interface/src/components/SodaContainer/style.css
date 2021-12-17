@@ -2,8 +2,6 @@
     display: flex;
     flex: 1;
     padding: 25px;
-    /* width: 750px; */
-    /* margin: 0 auto; */
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -20,3 +18,8 @@
     font-weight: bold;
     padding: 5px;
 }
+
+.add-button {
+    align-self: flex-start;
+}
+

@@ -1,21 +1,16 @@
 import axios from 'axios';
 
-export const apiGetSodas = async () => {
-  const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/sodas`);
-  return result.data;
-};
+const BASEURL = process.env.REACT_APP_BASE_URL;
 
-export const apiAddSoda = async (soda) => {
-  const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/sodas`, soda);
-  return result.data;
-};
+export default {
+  getSodas: () => axios.get(`${BASEURL}/api/sodas`),
 
-export const apiUpdateSoda = async (soda) => {
-  const result = await axios.put(`${process.env.REACT_APP_BASE_URL}/api/sodas/${soda.id}`, soda);
-  return result.data;
-};
+  addSoda: (soda) => axios.post(`${BASEURL}/api/sodas`, soda),
 
-export const apiGetTransactions = async () => {
-  const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/transactions`);
-  return result.data;
+  updateSoda: (soda) => axios.put(`${BASEURL}/api/sodas/${soda.id}`, soda),
+
+  deleteSoda: (id) => axios.delete(`${BASEURL}/api/sodas/${id}`),
+
+  getTransactions: () => axios.get(`${BASEURL}/api/transactions`),
+
 };

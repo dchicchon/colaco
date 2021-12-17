@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --verbose",
-    "start": "node server.js",
+    "start": "cross-env NODE_ENV=production node server.js",
     "lint": "npx eslint . --fix",
     "seed": "node utils/seed.js",
-    "develop": "npm run seed && npx nodemon server.js"
+    "develop": "cross-env NODE_ENV=development npx nodemon server.js"
   },
   "keywords": [],
   "author": "",

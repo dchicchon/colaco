@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { apiGetSodas } from '../../utils/api';
+import API from '../../utils/API';
 import Modal from '../Modal';
 import Soda from '../Soda';
 import './style.css';
@@ -11,8 +11,11 @@ const SodaContainer = function SodaContainer() {
   const shadow = useRef(null);
 
   const getSodas = async () => {
-    const result = await apiGetSodas();
-    setSodas(result);
+    API.getSodas().then((result) => {
+      setSodas(result.data);
+    }).catch((err) => {
+      console.log(err);
+    });
   };
 
   const toggleModal = async () => {
@@ -23,7 +26,7 @@ const SodaContainer = function SodaContainer() {
       setSodaToUpdate({});
       setShowModal(false);
     } else {
-      shadow.current.style.background = '#383636';
+      shadow.current.style.background = 'rgb(4,3,3)';
       shadow.current.style.pointerEvents = 'all';
       setShowModal(true);
     }
@@ -51,10 +54,12 @@ const SodaContainer = function SodaContainer() {
           <span>Quantity</span>
           <span>Update</span>
         </div>
-        {sodas.length ? sodas.map((soda) => (
+        {sodas.length > 0 ? sodas.map((soda) => (
           <Soda key={soda.id} soda={soda} toggleUpdateModal={toggleUpdateModal} />
         )) : 'No sodas found'}
-        <button className="addLabel" onClick={toggleModal} type="button">+</button>
+        <span data-desc="Add Button" className="tool-tip add-button">
+          <button className="rounded-button " onClick={toggleModal} type="button">+</button>
+        </span>
       </div>
     </>
   );
