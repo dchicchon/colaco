@@ -46,8 +46,6 @@ module.exports = {
   },
 
   deleteSoda: (req, res) => {
-    console.log('Deleting Soda');
-    console.log(req.params);
     Soda.destroy({ where: { id: req.params.id } }).then((result) => {
       res.json(result);
     }).catch((err) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import API from '../../utils/API';
 import './style.css';
 
@@ -8,21 +8,13 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState('');
-
-  useEffect(() => {
-    // if we have soda to update, use that for our state
-    if (sodaToUpdate.id) {
-      setLabel(sodaToUpdate.label);
-      setPrice(sodaToUpdate.price);
-      setQuantity(sodaToUpdate.quantity);
-    }
-  }, []);
+  const interval = useRef(null);
 
   const changeQuantity = (addBool) => {
     if (addBool) {
-      setQuantity((prevState) => prevState + 1);
+      interval.current = setInterval(() => setQuantity((prevState) => prevState + 1), 50);
     } else {
-      setQuantity((prevState) => (prevState ? prevState - 1 : prevState));
+      interval.current = setInterval(() => setQuantity((prevState) => prevState - 1), 50);
     }
   };
 
@@ -66,6 +58,15 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
     });
   };
 
+  useEffect(() => {
+    // if we have soda to update, use that for our state
+    if (sodaToUpdate.id) {
+      setLabel(sodaToUpdate.label);
+      setPrice(sodaToUpdate.price);
+      setQuantity(sodaToUpdate.quantity);
+    }
+  }, []);
+
   return (
     <div className="modal">
       {sodaToUpdate.id ? <h4>Update Soda</h4> : <h4>New Soda</h4> }
@@ -86,19 +87,19 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
           Quantity
         </label>
         <div id="quantity-button-group">
-          <button className="rounded-button" onClick={() => changeQuantity(false)} type="button">-</button>
+          <button className="rounded-button" onMouseUp={() => clearInterval(interval.current)} onMouseDown={() => changeQuantity(false)} type="button">-</button>
           <span>{quantity}</span>
-          <button className="rounded-button" onClick={() => changeQuantity(true)} type="button">+</button>
+          <button className="rounded-button" onMouseUp={() => clearInterval(interval.current)} onMouseDown={() => changeQuantity(true)} type="button">+</button>
         </div>
-      </div>
-      <div>
-        {error}
       </div>
       <div id="modal-button-group">
         <button className="main-button" onClick={toggleModal} type="button">Cancel</button>
         <button className="main-button" onClick={sodaToUpdate.id ? updateSoda : submitSoda} type="button">Submit</button>
         {sodaToUpdate.id ? <button className="main-button" type="button" onClick={deleteSoda}>Delete</button> : ''}
       </div>
+      <p id="error">
+        {error}
+      </p>
 
     </div>
   );
