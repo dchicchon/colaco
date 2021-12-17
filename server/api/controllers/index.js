@@ -1,7 +1,7 @@
 const { Soda, Transaction } = require('../models');
 
 module.exports = {
-  getSodas: async (req, res) => {
+  getSodas: (req, res) => {
     Soda.findAll().then((sodas) => {
       res.json(sodas);
     }).catch((err) => {
@@ -27,7 +27,7 @@ module.exports = {
     res.json(soda);
   },
 
-  updateSoda: async (req, res) => {
+  updateSoda: (req, res) => {
     Soda.update(req.body, { where: { id: req.params.id } }).then((result) => {
       res.json(result);
     }).catch((err) => {
@@ -36,7 +36,7 @@ module.exports = {
     });
   },
 
-  createSoda: async (req, res) => {
+  createSoda: (req, res) => {
     Soda.create(req.body).then((soda) => {
       res.json(soda);
     }).catch((err) => {
@@ -45,7 +45,18 @@ module.exports = {
     });
   },
 
-  getTransactions: async (req, res) => {
+  deleteSoda: (req, res) => {
+    console.log('Deleting Soda');
+    console.log(req.params);
+    Soda.destroy({ where: { id: req.params.id } }).then((result) => {
+      res.json(result);
+    }).catch((err) => {
+      res.status(500);
+      res.json(err);
+    });
+  },
+
+  getTransactions: (req, res) => {
     Transaction.findAll().then((transactions) => {
       res.json(transactions);
     }).catch((err) => {

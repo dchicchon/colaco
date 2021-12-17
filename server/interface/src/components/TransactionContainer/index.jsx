@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Transaction from '../Transaction';
-import { apiGetTransactions } from '../../utils/api';
+import API from '../../utils/API';
 import './style.css';
 
 const TransactionContainer = function TransactionContainer() {
   const [transactions, setTrasanctions] = useState([]);
 
   const getTransactions = async () => {
-    const result = await apiGetTransactions();
-    setTrasanctions(result);
+    API.getTransactions()
+      .then((result) => {
+        setTrasanctions(result.data);
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {

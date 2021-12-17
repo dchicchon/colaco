@@ -16,7 +16,7 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
           {soda.label}
           {' '}
           :   $
-          {soda.price.toFixed(2)}
+          {soda.price}
           {' '}
           -
           {' '}

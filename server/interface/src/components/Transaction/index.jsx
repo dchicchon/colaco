@@ -6,7 +6,7 @@ const parseDate = (date) => {
   return newDate.toLocaleString();
 };
 
-const Transaction = function ({ transaction }) {
+const Transaction = function Transaction({ transaction }) {
   return (
     <div className="transaction-item" role="document">
       <span>

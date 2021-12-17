@@ -11,12 +11,16 @@ const Soda = function Soda({ soda, toggleUpdateModal }) {
         {soda.label}
       </span>
       <span>
-        {soda.price.toFixed(2)}
+        {soda.price}
       </span>
       <span>
         {soda.quantity}
       </span>
-      <span><button onClick={() => toggleUpdateModal(soda)} type="button">&#9776;</button></span>
+      <span>
+        <span className="tool-tip" data-desc="Update Soda">
+          <button className="rounded-button" onClick={() => toggleUpdateModal(soda)} type="button">&#9776;</button>
+        </span>
+      </span>
     </div>
   );
 };
