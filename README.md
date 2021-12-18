@@ -17,5 +17,6 @@ This full-stack application is built to dispense sodas from a virtual soda machi
 ## Start
 Enter the command `npm run quickstart` in the project directory to install and start both the `client` and `server`
 
-
-
+## Production Links
+Client: https://soda-machine-dchicchon.herokuapp.com/
+Server: https://soda-machine-server-dchicchon.herokuapp.com/

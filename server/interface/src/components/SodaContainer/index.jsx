@@ -45,7 +45,7 @@ const SodaContainer = function SodaContainer() {
     <>
       <div className="shadow" ref={shadow} />
       {showModal ? <Modal toggleModal={toggleModal} sodaToUpdate={sodaToUpdate} /> : ''}
-      <div className="soda-container">
+      <div className="container">
         <h3>Soda Machine Inventory</h3>
         <div className="soda-container-header">
           <span>Label</span>

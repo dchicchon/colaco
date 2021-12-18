@@ -19,7 +19,7 @@ const TransactionContainer = function TransactionContainer() {
   }, []);
 
   return (
-    <div className="transaction-container">
+    <div className="container">
       <h3>Transaction History</h3>
       <div className="transaction-container-header">
         <span>ID</span>
