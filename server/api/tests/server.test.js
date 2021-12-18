@@ -8,13 +8,6 @@ describe('Test requests for server', () => {
   beforeAll(async () => {
     await seedTestingDB();
   });
-  afterAll(async () => {
-    // try {
-    //   fs.unlinkSync('../test.sqlite');
-    // } catch (err) {
-    //   console.error(err);
-    // }
-  });
 
   test('It should respond to GET /api/sodas', (done) => {
     request(app)

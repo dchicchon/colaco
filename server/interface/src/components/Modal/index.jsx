@@ -29,9 +29,10 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
   const checkErrors = () => {
     if (!label) setError('Please fill in a soda label');
     if (!price) setError('Please fill in a soda price');
+    if (!parseFloat(price)) setError('Please enter a valid price');
     if (!quantity) setError('Please fill in a soda quantity');
     if (!description) setError('Please fill in a soda description');
-    if (!label || !price || !quantity || !description) return true;
+    if (!label || !price || !quantity || !description || !parseFloat(price)) return true;
     return false;
   };
 
