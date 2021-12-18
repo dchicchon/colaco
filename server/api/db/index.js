@@ -16,5 +16,5 @@ if (process.env.JAWSDB_URL) {
       dialect: 'sqlite',
       storage: './storage.sqlite',
     });
-  module.exports = db;
 }
+module.exports = db;
