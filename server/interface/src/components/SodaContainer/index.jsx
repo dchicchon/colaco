@@ -48,7 +48,7 @@ const SodaContainer = function SodaContainer() {
       <div className="container">
         <span>
           <h3>Soda Machine Inventory</h3>
-          <span data-desc="Add Soda" className="tool-tip add-button">
+          <span data-desc="Add Soda" className="tool-tip">
             <button className="rounded-button " onClick={toggleModal} type="button">+</button>
           </span>
         </span>
