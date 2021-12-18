@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASEURL = process.env.BASE_URL;
+const BASEURL = process.env.REACT_APP_BASE_URL;
 
 export default {
   getSodas: () => axios.get(`${BASEURL}/api/sodas`),
