@@ -9,11 +9,12 @@
     "start": "concurrently \"npm run seed\" \"npm run develop\"",
     "develop": "concurrently \"npm run client\" \"npm run server\" ",
     "client": "cd client && npm start",
-    "deploy-client":"git subtree push --prefix client client master",
-    "deploy-server":"git subtree push --prefix server server master",
-    "seed":"cd server && npm run seed",
+    "deploy-client": "git subtree push --prefix client client master",
+    "deploy-server": "git subtree push --prefix server server master",
+    "seed": "cd server && npm run seed",
     "server": "cd server && npm run develop",
     "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
+    "e2e-test":"jest __e2e__",
     "lint": "concurrently \" cd client && npm run lint\" \"cd server && npm run lint\"  ",
     "prepare": "husky install",
     "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\""
@@ -24,6 +25,7 @@
   "devDependencies": {
     "concurrently": "^6.4.0",
     "husky": "^7.0.4",
+    "jest": "^27.4.5",
     "run-script-os": "^1.1.6"
   }
 }
