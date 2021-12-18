@@ -139,7 +139,7 @@ const SodaMachineIcon = function SodaMachineIcon() {
                 x={-201.156}
                 y={40.27}
               >
-                {'SODA '}
+                {'Cola '}
               </tspan>
               <tspan
                 style={{

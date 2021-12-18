@@ -8,7 +8,7 @@ const Header = function Header() {
   useEffect(() => {
     api.getRevenue().then((result) => {
       if (result.data[0].revenue) {
-        setRevenue(result.data[0].revenue);
+        setRevenue(result.data[0].revenue.toFixed(2));
       }
     }).catch((err) => {
       console.log('ERROR');

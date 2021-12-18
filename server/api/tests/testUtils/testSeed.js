@@ -1,5 +1,5 @@
-const { Soda } = require('../models');
-const db = require('../db');
+const { Soda } = require('../../models');
+const db = require('../../db');
 
 const seedSodas = [
   {

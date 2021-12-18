@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../app');
-const seedTestingDB = require('../testUtils/testSeed');
+const seedTestingDB = require('./testUtils/testSeed');
 
 let testSoda = {
   label: 'TestSoda', price: 1.00, description: 'A test soda', quantity: 100,
