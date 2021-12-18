@@ -3,7 +3,7 @@ import { REMOVE_MESSAGE } from '../../utils/actions';
 import { useDispatchContext, useStateContext } from '../../utils/SodaContext';
 import './style.css';
 
-export const MessageBar = function MessageBar() {
+const MessageBar = function MessageBar() {
     const state = useStateContext();
     const dispatch = useDispatchContext();
     const removeMessage = (id) => {
@@ -31,3 +31,5 @@ export const MessageBar = function MessageBar() {
     }
     return '';
 };
+
+export default MessageBar;

@@ -7,8 +7,8 @@ import {
 } from '@testing-library/react';
 import { reducer } from './utils/reducer';
 import { DispatchContext, StateContext } from './utils/SodaContext';
-import { MessageBar } from './components/MessageBar';
-import { SodaMachine } from './components/SodaMachine';
+import MessageBar from './components/MessageBar';
+import SodaMachine from './components/SodaMachine';
 
 const initialState = {
     messages: [],

@@ -3,27 +3,10 @@ import { ADD_MESSAGE } from '../../utils/actions';
 import API from '../../utils/api';
 import { useDispatchContext } from '../../utils/SodaContext';
 import SodaMachineIcon from '../SodaMachineIcon';
+import SodaLabel from '../SodaLabel';
 import './style.css';
 
-const SodaLabel = function SodaLabel({ soda, buySoda }) {
-    return (
-      <div role="document" className="soda-label">
-        <div className="button-wrapper">
-          <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
-        </div>
-        {soda.label}
-        {' '}
-        :   $
-        {soda.price.toFixed(2)}
-        {' '}
-        -
-        {' '}
-        {(soda.quantity > 0) ? `${soda.quantity} left` : 'OUT'}
-      </div>
-    );
-};
-
-export const SodaMachine = function SodaMachine() {
+const SodaMachine = function SodaMachine() {
     const [sodas, setSodas] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const dispatch = useDispatchContext();
@@ -91,3 +74,5 @@ export const SodaMachine = function SodaMachine() {
       </div>
     );
 };
+
+export default SodaMachine;
