@@ -9,9 +9,8 @@ This [monorepo](https://en.wikipedia.org/wiki/Monorepo#:~:text=In%20version%20co
 2. [Start](#start)
 3. [Client](#client)
 4. [Server](#server)
-5. [Models](#models)
-6. [Production](#production)
-7. [Links](#links)
+5. [Production](#production)
+6. [Links](#links)
 
 ## Photos
 
@@ -84,6 +83,8 @@ An admin can delete a soda by clicking the `Update Soda` button then on the moda
 - Include a timeline of the soda machine revenue to analyze the most profitable times.
 - Include a table of most purchased sodas to anaylze which sodas were the most popular
 - Include pagination to our transaction and soda tables to allow admin to not have to request such a large amount of data from the server at one time.
+- Create more tests to ensure quality of code.
+
 
 ## API
 ### Summary
@@ -128,7 +129,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/sodas
+<code>curl http://localhost:4000/api/sodas
 <tr>
 <td><strong>Notes
 <td>Returns a list of sodas
@@ -160,7 +161,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/transactions
+<code>curl http://localhost:4000/api/transactions
 <tr>
 <td><strong>Notes
 <td>Returns a list of transactions 
@@ -192,7 +193,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/revenue
+<code>curl http://localhost:4000/api/revenue
 <tr>
 <td><strong>Notes
 <td>Returns the revenue of the soda machine
@@ -224,7 +225,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/sodas
+<code>curl -X POST -H "Content-Type: application/json" -d '{"label":"pop","price":1.00,"description":"niceSoda", "quantity":100}' http://localhost:4000/api/sodas
 <tr>
 <td><strong>Notes
 <td>Adds a soda
@@ -253,10 +254,13 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Error Response
 <td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
 <tr>
+<td><strong>Error Response
+<td><strong>Code:</strong> 400 BAD REQUEST<br><strong>Content: </strong><code>{"error":"No more soda to dispense"}
+<tr>
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/sodas
+<code>curl -X PUT -H "Content-Type: application/json" -d '{"id": [id]}' http://localhost:4000/api/sodas
 <tr>
 <td><strong>Notes
 <td>Decrements the soda quantity
@@ -289,7 +293,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/sodas/1
+<code>curl -X PUT -H "Content-Type: application/json" -d '{"label":"Poppy","price":1.50,"description":"A new Soda", "quantity":150"}' http://localhost:4000/api/sodas/[id]
 <tr> 
 <td><strong>Notes
 <td>Updates a soda
@@ -321,20 +325,21 @@ The API is structured to modularize the code and allow testing on individual fil
 <td>
 <strong>Sample Request
 <td>
-<code>http://localhost:4000/api/sodas/1
+<code>curl -X DELETE http://localhost:4000/api/sodas/[id]
 <tr> 
 <td><strong>Notes
 <td>Deletes a Soda
 </table>
 
-### Stretch Goals
-- In the API for purchasing a soda, the api is sending back an object that is a representation of the soda purchased. The client then creates an `a` tag to initiate the function `downloadJSON` to download the JSON file on the client. This method utilizes more resources on the browser and may stress mobile clients. It would be more appropriate to download from the server itself utilizing the method `res.download`
-- Transfer application to a Docker container to make it an executable that can run in any environment
-- Configure cors options to only accept origins for `client` 
-- Create more tests to ensure quality of code.
+### Database  
+For development of this application, [SQLite](https://www.sqlite.org/index.html) was used due to its flexibility as a `zero-configuration` and `self-contained` database engine.
 
+In production, it is [recommended](https://www.sqlite.org/whentouse.html) to utilize a SQL Database engines such as MySQL, PostGreSQL, etc. For my deployment of this application, I utilized `MySQL` through the provisioning of `JAWSDB` on `Heroku`
 
-# Models
+#### SQL vs NoSQL
+In the development of this project, a SQL Database was utilized as the main platform for hosting the data. In hindsight, I believe that a NoSQL database would have been the correct choice due to the flexibility of data models and because my application does not require any relational mapping of the tables.
+
+### Models
 This application relies on the Data Models of `Soda` and `Transaction`.
 
 ```js
@@ -353,6 +358,15 @@ Transaction {
 
 The models are then created as instances via [`Sequelize`](https://sequelize.org/)
 
+
+### Stretch Goals
+- In the API for purchasing a soda, the api is sending back an object that is a representation of the soda purchased. The client then creates an `a` tag to initiate the function `downloadJSON` to download the JSON file on the client. This method utilizes more resources on the browser and may stress mobile clients. It would be more appropriate to download from the server itself utilizing the method `res.download`
+- Convert database solution to utilize `mongoose` package since current application does not rely extensibly on relational mapping and it would be beneficial to have a more flexible data model.
+- Transfer application to a Docker container to make it an executable that can run in any environment
+- Configure cors options to only accept origins for `client` 
+- Create more tests to ensure quality of code.
+
+
 # Production
 To deploy this application I utilized [Heroku](https://www.heroku.com/home) since they provide add-ons for production SQL databases such as [JAWSDB](https://www.jawsdb.com/) that can easily be placed into the `API`. If no `JAWSDB`
 
@@ -360,7 +374,7 @@ To deploy this application I utilized [Heroku](https://www.heroku.com/home) sinc
 The `Client` during development utilizes the `Server` endpont `http://localhost:4000` for requests. For deployment, ensure that you set the .env variable `REACT_APP_BASE_URL` to your production server. On the Heroku application dashboard, this can be found in `settings` under the section `Config Vars`.
 
 ## Deployment
-To deploy this application, be sure to have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed. Since this project is a monorepo, we will deploy the application via [Git Subtrees](https://www.atlassian.com/git/tutorials/git-subtree)
+To deploy this application, be sure to have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed. Since this project is a monorepo, we will deploy the client and server individually as their own applications via [Git Subtrees](https://www.atlassian.com/git/tutorials/git-subtree)
 
 ### Client
 1. Create a Heroku application
@@ -389,7 +403,16 @@ git remote add server <server-heroku-endpoint>
 npm run deploy-server
 ```
 
-
+# Technologies Used
+- [React](https://reactjs.org/): JavaScript Framework for UI Interfaces
+- [Sequelize](https://sequelize.org/): Object Relational Mapper for SQL
+- [NodeJS](https://nodejs.org/en/): JavaScript Server Runtime Environment
+- [Express](https://expressjs.com/): JavaScript Web Framework
+- [Heroku](https://www.heroku.com/home): Cloud Application Platform to applications
+- [ESLint](https://eslint.org/): JavaScript Linter to identify issues and conform style
+- [Husky](https://www.npmjs.com/package/husky): NPM package to run project scripts with Git Hooks
+- [Axios](https://axios-http.com/docs/intro): promise based HTTP client for the Browser and NodeJS
+- [CORS](https://www.npmjs.com/package/cors): NPM package to enable Cross Origin Resource Sharing on the server.
 
 ## Links
 [Client](https://soda-machine-dchicchon.herokuapp.com/)
