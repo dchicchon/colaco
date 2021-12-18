@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ADD_MESSAGE } from '../../utils/actions';
-import { apiBuySoda, apiGetSodas } from '../../utils/api';
+import API from '../../utils/api';
 import { useDispatchContext } from '../../utils/SodaContext';
 import SodaMachineIcon from '../SodaMachineIcon';
 import './style.css';
@@ -28,12 +28,21 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
 
 const SodaMachine = function SodaMachine() {
     const [sodas, setSodas] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
     const dispatch = useDispatchContext();
     // const state = useStateContext();
     const setNewSodas = async () => {
-        const apiSodas = await apiGetSodas();
-        // console.log(apiSodas)
-        setSodas(apiSodas);
+        API.getSodas()
+        .then((result) => {
+          if (result.data) {
+            setSodas(result.data);
+          } else {
+            setErrorMessage('No Sodas Available!');
+          }
+        })
+        .catch(() => {
+          setErrorMessage('Fault in Soda Machine. Plesae come again letter');
+        });
     };
 
     const downloadJSON = async (result) => {
@@ -50,11 +59,13 @@ const SodaMachine = function SodaMachine() {
     };
 
     const buySoda = async (id) => {
-        apiBuySoda(id).then((result) => {
+        API.buySoda(id)
+        .then((result) => {
           dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.label}` });
           downloadJSON(result);
           setNewSodas();
-        }).catch(() => {
+        })
+        .catch(() => {
           dispatch({ type: ADD_MESSAGE, payload: 'Machine Malfunction, please try again later' });
         });
     };
@@ -67,9 +78,13 @@ const SodaMachine = function SodaMachine() {
       <div id="soda-machine">
         <SodaMachineIcon />
         <div id="soda-selection">
-          {sodas.length && sodas.map((soda) => (
+          {sodas.length > 0 ? sodas.map((soda) => (
             <SodaLabel key={soda.id} soda={soda} buySoda={buySoda} />
-            ))}
+            )) : (
+              <div>
+                {errorMessage}
+              </div>
+)}
         </div>
 
       </div>
