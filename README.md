@@ -359,7 +359,7 @@ The models are then created as instances via [`Sequelize`](https://sequelize.org
 
 
 ### Stretch Goals
-- In the API for purchasing a soda, the api is sending back an object that is a representation of the soda purchased. The client then creates an `a` tag to initiate the function `downloadJSON` to download the JSON file on the client. This method utilizes more resources on the browser and may stress mobile clients. It would be more appropriate to download from the server itself utilizing the method `res.download`
+- In the API for purchasing a soda, the api is sending back an object that is a representation of the soda purchased. The client then creates an `a` tag to initiate the function `downloadJSON` to download the JSON file on the client. This method utilizes more resources on the browser and may stress mobile clients. It would be more appropriate to download from the server itself utilizing the method [`res.download`](https://github.com/expressjs/express/blob/master/examples/downloads/index.js)
 - Convert database solution to utilize `mongoose` package since current application does not rely extensibly on relational mapping and it would be beneficial to have a more flexible data model.
 - Transfer application to a Docker container to make it an executable that can run in any environment
 - Configure cors options to only accept origins for `client` 
@@ -402,6 +402,23 @@ git remote add server <server-heroku-endpoint>
 npm run deploy-server
 ```
 
+# Available Scripts
+```console
+npm run quickstart    - quickstart fullstack application
+npm run install       - install dependencies in application
+npm start             - runs seed script and develop script
+npm run develop       - starts client and api development servers
+npm run client        - starts client development server
+npm run server        - starts server api and interface servers
+npm run seed          - seeds sqlite database
+npm run deploy-client - deploys client build to heroku endpoint
+npm run deploy-server - deploys server build to heroku endpoint
+npm run lint          - runs linter on client and server
+npm run test          - runs tests on client and server
+npm run prepare       - prepares git hooks with husky
+npm run build         - runs build scripts of client and api-interface
+```
+
 # Technologies Used
 - [React](https://reactjs.org/): JavaScript Framework for UI Interfaces
 - [Sequelize](https://sequelize.org/): Object Relational Mapper for SQL
@@ -412,6 +429,10 @@ npm run deploy-server
 - [Husky](https://www.npmjs.com/package/husky): NPM package to run project scripts with Git Hooks
 - [Axios](https://axios-http.com/docs/intro): promise based HTTP client for the Browser and NodeJS
 - [CORS](https://www.npmjs.com/package/cors): NPM package to enable Cross Origin Resource Sharing on the server.
+
+# Project Stretch Goals
+- Utilize [Continuous Integration](https://www.atlassian.com/continuous-delivery/continuous-integration) in the project for future codebase development.
+- Several eslint configs have rules turned off, turn them on in the future
 
 ## Links
 [Client](https://soda-machine-dchicchon.herokuapp.com/)
