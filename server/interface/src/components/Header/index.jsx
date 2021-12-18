@@ -13,6 +13,7 @@ const Header = function Header() {
     }).catch((err) => {
       console.log('ERROR');
       console.error(err);
+      setRevenue('Unable to retrieve revenue from server');
     });
   }, []);
   return (
