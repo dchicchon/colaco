@@ -11,17 +11,14 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
         <div className="button-wrapper">
           <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
-        <div className="text-wrapper">
-          {' '}
-          {soda.label}
-          {' '}
-          :   $
-          {soda.price}
-          {' '}
-          -
-          {' '}
-          {(soda.quantity > 0) ? `${soda.quantity} left` : 'OUT'}
-        </div>
+        {soda.label}
+        {'An effervescent fruity experience with hints of grape and coriander. '}
+        :   $
+        {soda.price.toFixed(2)}
+        {' '}
+        -
+        {' '}
+        {(soda.quantity > 0) ? `${soda.quantity} left` : 'OUT'}
       </div>
     );
 };

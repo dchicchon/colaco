@@ -25,7 +25,6 @@ const Soda = db.define('Soda', {
   price: {
     type: DataTypes.FLOAT,
     allowNull: false,
-
     validate: {
       min: {
         args: [0.00],
@@ -36,6 +35,10 @@ const Soda = db.define('Soda', {
         msg: 'Price cannot be greater than $100.00',
       },
     },
+  },
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   quantity: {
     type: DataTypes.INTEGER,

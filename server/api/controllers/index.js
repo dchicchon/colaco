@@ -23,6 +23,7 @@ module.exports = {
       const soda = {
         id: result.id,
         label: result.label,
+        description: result.description,
       };
       await Transaction.create(transaction);
       res.json(soda);
