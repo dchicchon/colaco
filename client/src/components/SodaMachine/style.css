@@ -63,6 +63,10 @@
     padding: 10px;
     width: 90%;
 }
+.error-message {
+    font-size: 25px;
+    font-family: monospace;
+}
 .text-wrapper {
     font-size: 25px;
     line-height: 40px;

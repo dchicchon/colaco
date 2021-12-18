@@ -34,14 +34,14 @@ const SodaMachine = function SodaMachine() {
     const setNewSodas = async () => {
         API.getSodas()
         .then((result) => {
-          if (result.data) {
+          if (result.data.length) {
             setSodas(result.data);
           } else {
-            setErrorMessage('No Sodas Available!');
+            setErrorMessage('No Sodas Available! Please check again later');
           }
         })
         .catch(() => {
-          setErrorMessage('Fault in Soda Machine. Plesae come again letter');
+          setErrorMessage('Fault in Soda Machine. Please come again letter');
         });
     };
 
@@ -81,9 +81,13 @@ const SodaMachine = function SodaMachine() {
           {sodas.length > 0 ? sodas.map((soda) => (
             <SodaLabel key={soda.id} soda={soda} buySoda={buySoda} />
             )) : (
-              <div>
+              <h4 className="error-message">
                 {errorMessage}
-              </div>
+                <code>
+                  {' '}
+                  -soda os
+                </code>
+              </h4>
 )}
         </div>
 
