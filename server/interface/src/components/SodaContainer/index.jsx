@@ -46,7 +46,12 @@ const SodaContainer = function SodaContainer() {
       <div className="shadow" ref={shadow} />
       {showModal ? <Modal toggleModal={toggleModal} sodaToUpdate={sodaToUpdate} /> : ''}
       <div className="container">
-        <h3>Soda Machine Inventory</h3>
+        <span>
+          <h3>Soda Machine Inventory</h3>
+          <span data-desc="Add Soda" className="tool-tip add-button">
+            <button className="rounded-button " onClick={toggleModal} type="button">+</button>
+          </span>
+        </span>
         <div className="soda-container-header">
           <span>Label</span>
           <span>Description</span>
@@ -57,9 +62,7 @@ const SodaContainer = function SodaContainer() {
         {sodas.length > 0 ? sodas.map((soda) => (
           <Soda key={soda.id} soda={soda} toggleUpdateModal={toggleUpdateModal} />
         )) : 'No sodas found'}
-        <span data-desc="Add Button" className="tool-tip add-button">
-          <button className="rounded-button " onClick={toggleModal} type="button">+</button>
-        </span>
+
       </div>
     </>
   );

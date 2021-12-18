@@ -16,6 +16,10 @@ html {
   flex: 1;
 }
 
+.container > span > h3 {
+  display: inline;
+  margin-right: 5px;
+}
 
 .tables {
   display: flex;
@@ -75,6 +79,6 @@ html {
   width: 100px;
   border: 1px solid #85ceff;
   border-radius: 10px;
-  bottom: 35px;
+  bottom: 25px;
   background-color: #1c2333;
 }

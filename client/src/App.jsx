@@ -1,6 +1,6 @@
 import React from 'react';
-import SodaMachine from './components/SodaMachine';
-import MessageBar from './components/MessageBar';
+import { SodaMachine } from './components/SodaMachine';
+import { MessageBar } from './components/MessageBar';
 import { SodaProvider } from './utils/SodaContext';
 import './App.css';
 
