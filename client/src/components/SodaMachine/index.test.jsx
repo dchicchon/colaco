@@ -2,14 +2,14 @@ import React from 'react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { render, screen, waitFor } from '@testing-library/react';
-import SodaMachine from '.';
+import { SodaMachine } from '.';
 
 const sodas = [{
     id: 1, label: 'Pop', price: 1.00, quantity: 100,
    }];
 
 const server = setupServer(
-    rest.get(`${process.env.REACT_APP_BASE_URL}/api/sodas`, (req, res, ctx) => res(ctx.json(sodas))),
+    rest.get('http://localhost:4000/api/sodas', (req, res, ctx) => res(ctx.json(sodas))),
 );
 
 beforeAll(() => server.listen());

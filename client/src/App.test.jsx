@@ -5,10 +5,10 @@ import {
  render, screen, waitFor,
 //  fireEvent,
 } from '@testing-library/react';
-import reducer from './utils/reducer';
+import { reducer } from './utils/reducer';
 import { DispatchContext, StateContext } from './utils/SodaContext';
-import MessageBar from './components/MessageBar';
-import SodaMachine from './components/SodaMachine';
+import { MessageBar } from './components/MessageBar';
+import { SodaMachine } from './components/SodaMachine';
 
 const initialState = {
     messages: [],
@@ -19,8 +19,8 @@ const sodas = [{
    }];
 
 const server = setupServer(
-    rest.get(`${process.env.REACT_APP_BASE_URL}/api/sodas`, (req, res, ctx) => res(ctx.json(sodas))),
-    rest.put(`${process.env.REACT_APP_BASE_URL}/api/sodas`, (req, res, ctx) => res(ctx.json(sodas[0]))),
+    rest.get('http://localhost:4000/api/sodas', (req, res, ctx) => res(ctx.json(sodas))),
+    rest.put('http://localhost:4000/api/sodas', (req, res, ctx) => res(ctx.json(sodas[0]))),
 );
 
 const Wrapper = function Wrapper() {

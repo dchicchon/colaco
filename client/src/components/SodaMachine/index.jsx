@@ -23,7 +23,7 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
     );
 };
 
-const SodaMachine = function SodaMachine() {
+export const SodaMachine = function SodaMachine() {
     const [sodas, setSodas] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const dispatch = useDispatchContext();
@@ -91,5 +91,3 @@ const SodaMachine = function SodaMachine() {
       </div>
     );
 };
-
-export default SodaMachine;

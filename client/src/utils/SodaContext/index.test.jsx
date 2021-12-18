@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import {
  StateContext, DispatchContext, useStateContext, SodaProvider, useDispatchContext,
-} from './SodaContext';
+} from '.';
 
 const initialState = {
   messages: [],

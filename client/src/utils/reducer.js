@@ -1,7 +1,7 @@
 import { v4 as uuid4 } from 'uuid';
 import { REMOVE_MESSAGE, ADD_MESSAGE } from './actions';
 
-const reducer = (state, action) => {
+export const reducer = (state, action) => {
     switch (action.type) {
         case ADD_MESSAGE: {
             const message = {
@@ -26,5 +26,3 @@ const reducer = (state, action) => {
             return state;
     }
 };
-
-export default reducer;
