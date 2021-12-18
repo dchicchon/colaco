@@ -61,7 +61,7 @@ const SodaMachine = function SodaMachine() {
     const buySoda = async (id) => {
         API.buySoda(id)
         .then((result) => {
-          dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.label}` });
+          dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.data.label}` });
           downloadJSON(result.data);
           setNewSodas();
         })
