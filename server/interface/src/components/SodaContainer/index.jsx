@@ -10,7 +10,7 @@ const SodaContainer = function SodaContainer() {
   const [showModal, setShowModal] = useState(false);
   const shadow = useRef(null);
 
-  const getSodas = async () => {
+  const getSodas = () => {
     API.getSodas().then((result) => {
       setSodas(result.data);
     }).catch((err) => {
@@ -18,7 +18,7 @@ const SodaContainer = function SodaContainer() {
     });
   };
 
-  const toggleModal = async () => {
+  const toggleModal = () => {
     if (showModal) {
       shadow.current.style.background = 'none';
       shadow.current.style.pointerEvents = 'none';
@@ -48,8 +48,8 @@ const SodaContainer = function SodaContainer() {
       <div className="soda-container">
         <h3>Soda Machine Inventory</h3>
         <div className="soda-container-header">
-          <span>ID</span>
           <span>Label</span>
+          <span>Description</span>
           <span>Price</span>
           <span>Quantity</span>
           <span>Update</span>

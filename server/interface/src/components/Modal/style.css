@@ -5,7 +5,7 @@
     padding: 10px;
     border-radius: 25px;
     width: 400px;
-    height: 400px;
+    height: 450px;
     margin-left: -200px;
     left: 50%;
     top: 15%;
@@ -24,7 +24,7 @@
     font-size: 20px;
 }
 
-.modal-input > input {
+.modal-input > input, .modal-input > textarea {
     display: block;
     margin: 10px auto;
     background: none;

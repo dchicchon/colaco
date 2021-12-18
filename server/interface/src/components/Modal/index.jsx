@@ -6,6 +6,7 @@ import './style.css';
 const Modal = function Modal({ toggleModal, sodaToUpdate }) {
   const [label, setLabel] = useState('');
   const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState('');
   const interval = useRef(null);
@@ -29,30 +30,33 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
     if (!label) setError('Please fill in a soda label');
     if (!price) setError('Please fill in a soda price');
     if (!quantity) setError('Please fill in a soda quantity');
-    if (!label || !price || !quantity) return true;
+    if (!description) setError('Please fill in a soda description');
+    if (!label || !price || !quantity || !description) return true;
     return false;
   };
 
-  const submitSoda = async () => {
+  const submitSoda = () => {
     // post request to our server
     if (!checkErrors()) {
-      API.addSoda({ label, price, quantity })
-        .then(() => toggleModal())
-        .catch((err) => setError(err));
-    }
-  };
-
-  const updateSoda = async () => {
-    if (!checkErrors()) {
-      API.updateSoda({
-        id: sodaToUpdate.id, label, price, quantity,
+      API.addSoda({
+        label, price, quantity, description,
       })
         .then(() => toggleModal())
         .catch((err) => setError(err));
     }
   };
 
-  const deleteSoda = async () => {
+  const updateSoda = () => {
+    if (!checkErrors()) {
+      API.updateSoda({
+        id: sodaToUpdate.id, label, price, quantity, description,
+      })
+        .then(() => toggleModal())
+        .catch((err) => setError(err));
+    }
+  };
+
+  const deleteSoda = () => {
     API.deleteSoda(sodaToUpdate.id).then((result) => {
       console.log(result);
       if (result.data) {
@@ -71,6 +75,7 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
       setLabel(sodaToUpdate.label);
       setPrice(sodaToUpdate.price);
       setQuantity(sodaToUpdate.quantity);
+      setDescription(sodaToUpdate.description);
     }
   }, []);
 
@@ -88,6 +93,11 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
           Price
         </label>
         <input id="price" name="price" placeholder="Enter Price here" value={price} onChange={(e) => setPrice(e.target.value)} />
+      </div>
+
+      <div className="modal-input">
+        <label htmlFor="description">Description</label>
+        <textarea placeholder="Enter Description here" value={description} onChange={(e) => setDescription(e.target.value)} />
       </div>
       <div className="modal-input">
         <label htmlFor="quantity">
