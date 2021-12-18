@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { Soda } = require('../models');
 const db = require('../db');
 

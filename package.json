@@ -9,6 +9,8 @@
     "start": "npm run develop",
     "develop": "concurrently \"npm run client\" \"npm run server\" ",
     "client": "cd client && npm start",
+    "deploy-client":"git subtree push --prefix client client master",
+    "deploy-server":"git subtree push --prefix server server master",
     "seed":"cd server && npm run seed",
     "server": "cd server && npm run develop",
     "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
