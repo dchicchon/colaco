@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd interface && npm start\" \"cd api && npm start \"",
+    "start": "cd api && npm start",
     "develop": "concurrently \"cd interface && npm start\" \"cd api && npm run develop\"",
     "test": "concurrently \"cd api && npm test\" \"cd interface && npm test\"",
-    "production": "cd api && npm start",
     "build":"cd interface && npm run build",
     "install": "concurrently \"cd interface && npm install\" \"cd api && npm install\"",
     "lint": "concurrently \"cd interface && npm run lint\" \"cd api && npm run lint\""
