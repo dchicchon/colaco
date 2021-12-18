@@ -404,7 +404,7 @@ npm run deploy-server
 
 # Available Scripts
 ```console
-npm run quickstart    - quickstart fullstack application
+npm run quickstart    - runs install script then start script
 npm run install       - install dependencies in application
 npm start             - runs seed script and develop script
 npm run develop       - starts client and api development servers
