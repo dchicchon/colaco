@@ -9,7 +9,7 @@ const sodas = [{
 }];
 
 const server = setupServer(
-  rest.get(`${process.env.REACT_APP_BASE_URL}/api/transactions`, (req, res, ctx) => res(ctx.json(sodas))),
+  rest.get('/api/transactions', (req, res, ctx) => res(ctx.json(sodas))),
 );
 
 beforeAll(() => server.listen());

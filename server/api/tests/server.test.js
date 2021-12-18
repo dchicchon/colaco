@@ -1,9 +1,10 @@
 const request = require('supertest');
-// const fs = require('fs');
 const app = require('../app');
 const seedTestingDB = require('../testUtils/testSeed');
 
-let testSoda = { label: 'TestSoda', price: 1.00, quantity: 100 };
+let testSoda = {
+  label: 'TestSoda', price: 1.00, description: 'A test soda', quantity: 100,
+};
 describe('Test requests for server', () => {
   beforeAll(async () => {
     await seedTestingDB();
