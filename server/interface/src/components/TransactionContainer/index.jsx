@@ -6,7 +6,7 @@ import './style.css';
 const TransactionContainer = function TransactionContainer() {
   const [transactions, setTrasanctions] = useState([]);
 
-  const getTransactions = async () => {
+  const getTransactions = () => {
     API.getTransactions()
       .then((result) => {
         setTrasanctions(result.data);

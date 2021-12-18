@@ -9,6 +9,7 @@
     "start": "npm run develop",
     "develop": "concurrently \"npm run client\" \"npm run server\" ",
     "client": "cd client && npm start",
+    "seed":"cd server && npm run seed",
     "server": "cd server && npm run develop",
     "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
     "lint": "concurrently \" cd client && npm run lint\" \"cd server && npm run lint\"  ",

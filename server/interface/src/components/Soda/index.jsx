@@ -5,13 +5,14 @@ const Soda = function Soda({ soda, toggleUpdateModal }) {
   return (
     <div className="soda-item" role="document">
       <span>
-        {soda.id}
-      </span>
-      <span>
         {soda.label}
       </span>
       <span>
-        {soda.price}
+        {soda.description}
+      </span>
+      <span>
+        $
+        {soda.price.toFixed(2)}
       </span>
       <span>
         {soda.quantity}

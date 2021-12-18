@@ -12,7 +12,7 @@ const SodaLabel = function SodaLabel({ soda, buySoda }) {
           <button type="button" disabled={!(soda.quantity > 0)} onClick={() => buySoda(soda.id)} className="soda-button">{' '}</button>
         </div>
         {soda.label}
-        {'An effervescent fruity experience with hints of grape and coriander. '}
+        {' '}
         :   $
         {soda.price.toFixed(2)}
         {' '}
@@ -27,7 +27,6 @@ const SodaMachine = function SodaMachine() {
     const [sodas, setSodas] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const dispatch = useDispatchContext();
-    // const state = useStateContext();
     const setNewSodas = async () => {
         API.getSodas()
         .then((result) => {
@@ -37,7 +36,8 @@ const SodaMachine = function SodaMachine() {
             setErrorMessage('No Sodas Available! Please check again later');
           }
         })
-        .catch(() => {
+        .catch((err) => {
+          console.error(err);
           setErrorMessage('Fault in Soda Machine. Please come again letter');
         });
     };

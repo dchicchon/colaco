@@ -58,11 +58,11 @@
     color: #15d2ff;
     background: #082e6a;
     border: 10px solid black;
-    height: 200px;
+    max-height: 200px;
     padding: 10px;
     width: 90%;
     float: left;
-    font-size: 18px;
+    font-size: 25px;
     line-height: 40px;
 }
 .error-message {
