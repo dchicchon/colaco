@@ -11,4 +11,6 @@ export default {
 
   getTransactions: () => axios.get('/api/transactions'),
 
+  getRevenue: () => axios.get('/api/revenue'),
+
 };

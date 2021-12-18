@@ -1,3 +1,4 @@
+const sequelize = require('sequelize');
 const { Soda, Transaction } = require('../models');
 
 module.exports = {
@@ -63,6 +64,19 @@ module.exports = {
   getTransactions: (req, res) => {
     Transaction.findAll().then((transactions) => {
       res.json(transactions);
+    }).catch((err) => {
+      res.status(500);
+      res.json(err);
+    });
+  },
+
+  getRevenue: (req, res) => {
+    Transaction.findAll({
+      attributes: [
+        [sequelize.fn('sum', sequelize.col('price')), 'revenue'],
+      ],
+    }).then((result) => {
+      res.json(result);
     }).catch((err) => {
       res.status(500);
       res.json(err);

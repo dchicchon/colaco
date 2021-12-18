@@ -2,7 +2,7 @@ import React from 'react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { render, screen, waitFor } from '@testing-library/react';
-import { SodaMachine } from '.';
+import SodaMachine from '.';
 
 const sodas = [{
     id: 1, label: 'Pop', price: 1.00, quantity: 100,
