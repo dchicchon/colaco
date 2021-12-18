@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Transaction from '../Transaction';
-import API from '../../utils/API';
+import API from '../../utils/api';
 import './style.css';
 
 const TransactionContainer = function TransactionContainer() {

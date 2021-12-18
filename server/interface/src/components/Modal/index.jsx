@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import API from '../../utils/API';
+import API from '../../utils/api';
 import './style.css';
 
 // add 'updateBool' as a prop. also take in props for soda that already exists

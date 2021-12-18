@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import API from '../../utils/API';
+import API from '../../utils/api';
 import Modal from '../Modal';
 import Soda from '../Soda';
 import './style.css';
