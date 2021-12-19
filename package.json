@@ -11,6 +11,7 @@
     "client": "cd client && npm start",
     "server": "cd server && npm run develop",
     "seed":"cd server && npm run seed",
+    "deploy":"npm run deploy-client && npm run deploy-server",
     "deploy-client":"git subtree push --prefix client client master",
     "deploy-server":"git subtree push --prefix server server master",
     "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
