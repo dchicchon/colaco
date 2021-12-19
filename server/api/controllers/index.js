@@ -6,7 +6,7 @@ module.exports = {
     Soda.findAll().then((sodas) => {
       res.json(sodas);
     }).catch((err) => {
-      res.status(500);
+      res.status(400);
       res.json(err);
     });
   },
@@ -34,7 +34,7 @@ module.exports = {
           res.json({ error: 'No more soda to dispense' });
         }
       }).catch((err) => {
-        res.status(500);
+        res.status(400);
         res.json(err);
       });
   },
@@ -44,7 +44,7 @@ module.exports = {
       .then((result) => {
         res.json(result);
       }).catch((err) => {
-        res.status(500);
+        res.status(400);
         res.json(err);
       });
   },
@@ -53,7 +53,7 @@ module.exports = {
     Soda.create(req.body).then((soda) => {
       res.json(soda);
     }).catch((err) => {
-      res.status(500);
+      res.status(400);
       res.json(err);
     });
   },
@@ -63,7 +63,7 @@ module.exports = {
       .then((result) => {
         res.json(result);
       }).catch((err) => {
-        res.status(500);
+        res.status(400);
         res.json(err);
       });
   },
@@ -72,7 +72,7 @@ module.exports = {
     Transaction.findAll().then((transactions) => {
       res.json(transactions);
     }).catch((err) => {
-      res.status(500);
+      res.status(400);
       res.json(err);
     });
   },
@@ -85,7 +85,7 @@ module.exports = {
     }).then((result) => {
       res.json(result);
     }).catch((err) => {
-      res.status(500);
+      res.status(400);
       res.json(err);
     });
   },

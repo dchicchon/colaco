@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../app');
-const seedTestingDB = require('./testUtils/testSeed');
+const seedTestingDB = require('../testUtils/testSeed');
 
 let testSoda = {
   label: 'TestSoda', price: 1.00, description: 'A test soda', quantity: 100,
@@ -27,7 +27,7 @@ describe('Requests to server that should be successful', () => {
         done();
       });
   });
-  test('It should respond to GET /api/revene', (done) => {
+  test('It should respond to GET /api/revenue', (done) => {
     request(app)
       .get('/api/revenue')
       .then((response) => {
@@ -64,6 +64,33 @@ describe('Requests to server that should be successful', () => {
   });
 });
 
-// describe('Requests to server that should result in an error', () => {
-
-// });
+describe('Requests to server that should result in an error', () => {
+  test('It should fail to POST /api/sodas', (done) => {
+    request(app)
+      .post('/api/sodas')
+      .set('Content-Type', 'application/json')
+      .send({})
+      .expect(400)
+      .end((err, response) => {
+        expect(response.statusCode).toBe(400);
+        expect(response.body.name).toBe('SequelizeValidationError');
+        return done();
+      });
+  });
+  // test('It should fail to PUT /api/sodas/:id', (done) => {
+  //   request(app)
+  //     .put(`/api/sodas/${testSoda.id}}`)
+  //     .set('Content-Type', 'application/json')
+  //     .send({
+  //       label: 1, price: 0, quantity: 0, description: '',
+  //     })
+  //     .expect(400)
+  //     .end((err, response) => {
+  //       console.log(err);
+  //       console.log(response.body);
+  //       expect(response.statusCode).toBe(400);
+  //       expect(response.body.name).toBe('SequelizeValidationError');
+  //       return done();
+  //     });
+  // });
+});
