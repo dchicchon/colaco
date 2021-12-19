@@ -1,17 +1,18 @@
 {
   "name": "interface",
-  "proxy":"http://localhost:4000",
+  "proxy": "http://localhost:4000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "eslint-config-airbnb": "^19.0.2",
     "axios": "^0.24.0",
+    "eslint-config-airbnb": "^19.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "run-script-os": "^1.1.6",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -30,7 +31,7 @@
     ]
   },
   "browserslist": {
-    "production": [ 
+    "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"

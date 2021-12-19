@@ -1,5 +1,5 @@
-const { Soda, Transaction } = require('../../models');
-const db = require('../../db');
+const { Soda, Transaction } = require('../models');
+const db = require('../db');
 
 const seedSodas = [
   {

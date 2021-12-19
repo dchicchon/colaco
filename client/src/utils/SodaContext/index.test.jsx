@@ -10,20 +10,20 @@ const initialState = {
 };
 const initialDispatch = jest.fn();
 
-const wrapper = ({ children }) => (
-  <DispatchContext.Provider value={initialDispatch}>
-    <StateContext.Provider value={initialState}>
-      {children}
-    </StateContext.Provider>
-  </DispatchContext.Provider>
+ const wrapper = ({ children }) => (
+   <DispatchContext.Provider value={initialDispatch}>
+     <StateContext.Provider value={initialState}>
+       {children}
+     </StateContext.Provider>
+   </DispatchContext.Provider>
 );
 
 describe('useContext test', () => {
   test('should return state and dispatch from both providers ', () => {
     render(<SodaProvider />);
-    const { result: state } = renderHook(() => useStateContext(), { wrapper });
-    const { result: dispatch } = renderHook(() => useDispatchContext(), { wrapper });
-    expect(state.current.messages.length).toBe(0);
-    expect(dispatch.current).toBeTruthy();
+    const { result: stateTest } = renderHook(() => useStateContext(), { wrapper });
+    const { result: dispatchTest } = renderHook(() => useDispatchContext(), { wrapper });
+    expect(dispatchTest.current).toEqual(initialDispatch);
+    expect(stateTest.current).toEqual(initialState);
   });
 });

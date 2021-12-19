@@ -10,21 +10,32 @@
     "develop": "concurrently \"npm run client\" \"npm run server\" ",
     "client": "cd client && npm start",
     "server": "cd server && npm run develop",
+    "api": "cd server && npm start",
     "seed": "cd server && npm run seed",
-    "deploy": "npm run deploy-client && npm run deploy-server",
-    "deploy-client": "git subtree push --prefix client client master",
-    "deploy-server": "git subtree push --prefix server server master",
-    "test": "concurrently \"cd client && npm test\" \"cd server && npm test\"",
+    "deploy": "npm run deploy:client && npm run deploy:server",
+    "deploy:client": "git subtree push --prefix client client master",
+    "deploy:server": "git subtree push --prefix server server master",
+    "test": "npm run test:client && npm run test:server",
+    "test:e2e": "concurrently \"npm run api\" \"npm run test:wait-server\"",
+    "test:wait-server": "wait-on http://localhost:4000 && npm run test:e2e-client",
+    "test:e2e-client":"cd client && npm run test:e2e",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
     "lint": "concurrently \" cd client && npm run lint\" \"cd server && npm run lint\"  ",
     "prepare": "husky install",
     "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "express",
+    "sequelize",
+    "jest"
+  ],
+  "author": "dchicchon",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^6.4.0",
     "husky": "^7.0.4",
-    "run-script-os": "^1.1.6"
+    "wait-on": "^6.0.0"
   }
 }
