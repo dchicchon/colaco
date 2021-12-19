@@ -411,8 +411,8 @@ npm run develop       - starts client and api development servers
 npm run client        - starts client development server
 npm run server        - starts server api and interface servers
 npm run seed          - seeds sqlite database
-npm run deploy-client - deploys client build to heroku endpoint
-npm run deploy-server - deploys server build to heroku endpoint
+npm run deploy:client - deploys client build to heroku endpoint
+npm run deploy:server - deploys server build to heroku endpoint
 npm run lint          - runs linter on client and server
 npm run test          - runs tests on client and server
 npm run prepare       - prepares git hooks with husky
