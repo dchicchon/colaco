@@ -100,7 +100,7 @@ app.js
 server.js
 ```
 
-The API is structured to modularize the code and allow testing on individual files.
+The API is structured to modularize the code and allow testing on individual files. An example of testing an express app can be found [here](https://dev.to/mhmdlotfy96/testing-nodejs-express-api-with-jest-and-supertest-1bk0)
 
 ### Available Routes
 

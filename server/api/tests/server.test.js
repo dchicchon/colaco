@@ -5,19 +5,10 @@ const seedTestingDB = require('./testUtils/testSeed');
 let testSoda = {
   label: 'TestSoda', price: 1.00, description: 'A test soda', quantity: 100,
 };
-describe('Test requests for server', () => {
+
+describe('Requests to server that should be successful', () => {
   beforeAll(async () => {
     await seedTestingDB();
-  });
-
-  test('It should respond to GET /api/sodas', (done) => {
-    request(app)
-      .get('/api/sodas')
-      .then((response) => {
-        expect(response.body.length).toBe(4);
-        expect(response.statusCode).toBe(200);
-        done();
-      });
   });
   test('It should respond to GET /api/sodas', (done) => {
     request(app)
@@ -31,6 +22,16 @@ describe('Test requests for server', () => {
     request(app)
       .get('/api/transactions')
       .then((response) => {
+        expect(response.body.length).toBe(2);
+        expect(response.statusCode).toBe(200);
+        done();
+      });
+  });
+  test('It should respond to GET /api/revene', (done) => {
+    request(app)
+      .get('/api/revenue')
+      .then((response) => {
+        expect(response.body.length).toBe(1);
         expect(response.statusCode).toBe(200);
         done();
       });
@@ -56,10 +57,13 @@ describe('Test requests for server', () => {
       })
       .expect(200)
       .end((err, response) => {
-        console.log(testSoda.id);
         expect(response.body[0]).toBe(1);
         if (err) return err;
         return done();
       });
   });
 });
+
+// describe('Requests to server that should result in an error', () => {
+
+// });
