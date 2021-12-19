@@ -30,12 +30,7 @@ To start this application, run:
 ```console
 npm run quickstart
 ```
-This will install all the dependencies for the application then concurrently begin the client and api development servers. By default, the client will be hosted on http://localhost:3000, the api interface on http://localhost:3001, and the api on http://localhost:4000
-### Seeding
-If you want a seeded database, run:
-```console
-npm run seed
-```
+This will install all the dependencies for the application then concurrently begin the client and api development servers. By default, the client will be hosted on http://localhost:3000, the api interface on http://localhost:3001, and the api on http://localhost:4000. The database should also be seeded by this point as well
 
 
 # Client
