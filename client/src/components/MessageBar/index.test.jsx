@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { MessageBar } from '.';
+import MessageBar from '.';
 import { reducer } from '../../utils/reducer';
 import { DispatchContext, StateContext } from '../../utils/SodaContext';
 

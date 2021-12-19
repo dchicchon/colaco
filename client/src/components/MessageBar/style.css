@@ -36,3 +36,9 @@ bottom: 100px;
         bottom: 200px;
     }
 }
+
+@media screen and (max-width: 736px) {
+    .message-bar {
+        left: 500px;
+    }
+}

@@ -1,5 +1,5 @@
-const { Soda } = require('../models');
-const db = require('../db');
+const { Soda, Transaction } = require('../../models');
+const db = require('../../db');
 
 const seedSodas = [
   {
@@ -27,14 +27,31 @@ const seedSodas = [
     quantity: 50,
   },
 ];
+
+const seedTransactions = [
+  {
+    label: 'Fizz',
+    price: 1.00,
+    time: new Date().toLocaleString(),
+  },
+  {
+    label: 'Fizz',
+    price: 1.00,
+    time: new Date().toLocaleString(),
+  },
+];
+
 const seedDatabase = async () => {
-  const promiseArr = [];
-  for (let i = 0; i < seedSodas.length; i += 1) {
-    const soda = seedSodas[i];
+  const promises = [];
+  seedSodas.forEach((soda) => {
     const result = Soda.create(soda);
-    promiseArr.push(result);
-  }
-  await Promise.all(promiseArr);
+    promises.push(result);
+  });
+  seedTransactions.forEach((transaction) => {
+    const result = Transaction.create(transaction);
+    promises.push(result);
+  });
+  await Promise.all(promises);
 };
 
 const seedTestingDB = async () => {
