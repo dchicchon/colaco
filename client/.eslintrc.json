@@ -8,6 +8,7 @@
         "plugin:react/recommended",
         "airbnb"
     ],
+    "ignorePatterns": "**/build/*",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
