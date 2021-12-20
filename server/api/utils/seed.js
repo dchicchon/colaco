@@ -31,11 +31,10 @@ const seedSodas = [
 
 const seedDatabase = async () => {
   const promiseArr = [];
-  for (let i = 0; i < seedSodas.length; i += 1) {
-    const soda = seedSodas[i];
+  seedSodas.forEach((soda) => {
     const result = Soda.create(soda);
     promiseArr.push(result);
-  }
+  });
   await Promise.all(promiseArr);
 };
 

@@ -77,20 +77,26 @@ describe('Requests to server that should result in an error', () => {
         return done();
       });
   });
-  // test('It should fail to PUT /api/sodas/:id', (done) => {
-  //   request(app)
-  //     .put(`/api/sodas/${testSoda.id}}`)
-  //     .set('Content-Type', 'application/json')
-  //     .send({
-  //       label: 1, price: 0, quantity: 0, description: '',
-  //     })
-  //     .expect(400)
-  //     .end((err, response) => {
-  //       console.log(err);
-  //       console.log(response.body);
-  //       expect(response.statusCode).toBe(400);
-  //       expect(response.body.name).toBe('SequelizeValidationError');
-  //       return done();
-  //     });
-  // });
+  test('It should fail to PUT /api/sodas/:id', (done) => {
+    request(app)
+      .put(`/api/sodas/${testSoda.id}}`)
+      .set('Content-Type', 'application/json')
+      .send({
+        label: 1, price: 0, quantity: 0, description: '',
+      })
+      .expect(200)
+      .end((err, response) => {
+        expect(response.body[0]).toBe(0);
+        return done();
+      });
+  });
+  test('It should fail to DELETE /api/sodas/:id', (done) => {
+    request(app)
+      .delete('/api/sodas/1')
+      .expect(200)
+      .end((err, response) => {
+        expect(response.body).toBe(0);
+        return done();
+      });
+  });
 });
