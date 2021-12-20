@@ -123,7 +123,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>[{id: '1', label: 'Pop', description: 'A soda', price: 1.00, quantity: 100 }, ...]
 <tr>
 <td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
+<td><strong>Code:</strong> 400 BAD REQUEST <br><strong>Content</strong>: <code>None
 <tr>
 <td>
 <strong>Sample Request
@@ -155,7 +155,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>[{id: '1', label: 'Pop', price: 1.00, time: 12/18/2021, 3:02:21 PM }, ...]
 <tr>
 <td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
+<td><strong>Code:</strong> 400 BAD REQUEST ERROR<br><strong>Content</strong>: <code>None
 <tr>
 <td>
 <strong>Sample Request
@@ -187,7 +187,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>[{revenue: 9.00}]
 <tr>
 <td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
+<td><strong>Code:</strong> 400 BAD REQUEST <br><strong>Content</strong>: <code>None
 <tr>
 <td>
 <strong>Sample Request
@@ -219,7 +219,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>{id: 1, label: 'Pop', price: 1.00, description: 'A soda', quantity: 100}
 <tr>
 <td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
+<td><strong>Code:</strong>400 BAD REQUEST<br><strong>Content</strong>: <code>None
 <tr>
 <td>
 <strong>Sample Request
@@ -249,9 +249,6 @@ The API is structured to modularize the code and allow testing on individual fil
 <tr>
 <td><strong>Success Response
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>[1,0]
-<tr>
-<td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
 <tr>
 <td><strong>Error Response
 <td><strong>Code:</strong> 400 BAD REQUEST<br><strong>Content: </strong><code>{"error":"No more soda to dispense"}
@@ -287,7 +284,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>[1,0]
 <tr>
 <td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
+<td><strong>Code:</strong> 400 BAD REQUEST<br><strong>Content</strong>: <code>None
 <tr>
 <td>
 <strong>Sample Request
@@ -319,7 +316,7 @@ The API is structured to modularize the code and allow testing on individual fil
 <td><strong>Code:</strong> 200<br><strong>Content: </strong><code>[1]
 <tr>
 <td><strong>Error Response
-<td><strong>Code:</strong> 500 INTERNAL SERVER ERROR<br><strong>Content</strong>: <code>None
+<td><strong>Code:</strong> 400 BAD REQUEST<br><strong>Content</strong>: <code>None
 <tr>
 <td>
 <strong>Sample Request
