@@ -1,91 +1,89 @@
 #soda-machine {
-    width: 500px;
-    margin: 0 auto;
-    position: relative;
+  /* width: 500px; */
+  /* margin: 0 auto; */
+  /* position: relative; */
+}
+
+#sodascreen {
+  font-size: 10px;
+  height: inherit;
+  /* position: absolute */
 }
 @media screen and (max-height: 900px) {
-    #soda-machine {
-        bottom: 100px;
-        transform: scale(0.85);
-    }
+  #soda-machine {
+    /* bottom: 100px; */
+    /* transform: scale(0.85); */
+  }
 }
 @media screen and (max-height: 700px) {
-    #soda-machine {
-        bottom: 200px;
-        transform: scale(0.75);
-    }
+  #soda-machine {
+    /* bottom: 200px; */
+    /* transform: scale(0.75); */
+  }
 }
 #soda-selection {
-    position: relative;
-    top: -508px;
-    left: 45px;
-    height: 311px;
-    width: 350px;
-    padding: 10px;
-    overflow: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    grid-gap: 10px;
-    gap: 10px;
-    border-radius: 10px;
+  height: 70px;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 6px;
 }
 #soda-selection::-webkit-scrollbar {
-    width: 10px;
+  width: 3px;
 }
 #soda-selection::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 #soda-selection::-webkit-scrollbar-thumb {
-    background-color: #082e6a;
-    border-radius: 25px;
-    border-left: none;
-    border-right: none;
+  background-color: #082e6a;
+  border-radius: 10px;
+  border-left: none;
+  border-right: none;
 }
 #soda-selection::-webkit-scrollbar-track-piece:end {
-    background: transparent;
-    margin-bottom: 35px;
+  background: transparent;
+  margin-bottom: 20px;
 }
 #soda-selection::-webkit-scrollbar-track-piece:start {
-    background: transparent;
-    margin-top: 35px;
+  background: transparent;
+  margin-top: 20px;
 }
-.soda-label {
-    display: flex;
-    border-radius: 25px;
-    font-family: monospace;
-    color: #15d2ff;
-    background: #082e6a;
-    border: 10px solid black;
-    max-height: 200px;
-    padding: 10px;
-    width: 90%;
-    float: left;
-    font-size: 25px;
-    line-height: 40px;
-}
+
 .error-message {
-    font-size: 25px;
-    font-family: monospace;
+  font-size: 10px;
+  font-family: monospace;
 }
 .text-wrapper {
-    font-size: 25px;
-    line-height: 40px;
+  font-size: 10px;
+  line-height: 40px;
 }
 .button-wrapper {
-    height: fit-content;
-    width: 15%;
-    padding: 5px;
+  height: fit-content;
+  /* width: 15%; */
+  /* padding: 5px; */
 }
 .soda-button {
-    height: 35px;
-    width: 35px;
-    border: 5px solid black;
-    transition: background-color 0.25s;
-    border-radius: 100%;
+  height: 16px;
+  width: 1px;
+  border: 2px solid black;
+  transition: background-color 0.25s;
+  border-radius: 100%;
 }
 .soda-button:hover {
-    background-color: rgb(45, 100, 218);
-    cursor: pointer;
+  background-color: rgb(45, 100, 218);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  #soda-selection::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 20px;
+  }
+  #soda-selection::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 20px;
+  }
 }

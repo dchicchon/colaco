@@ -1,44 +1,44 @@
 .svg-wrapper {
-    z-index: -1;
-    transform: scale(1.25) translateY(50px) translateX(-300px);
+  z-index: -1;
+  /* transform: scale(1.25) translateY(50px) translateX(-300px); */
 }
 
 .soda-svg-button-1 {
-    fill: red;
-    animation: change1 1s ease-in-out infinite;
+  fill: red;
+  animation: change1 1s ease-in-out infinite;
 }
 
 @keyframes change1 {
-    0% {
-        fill: red;
-    }
-    50% {
-        fill: white;
-    }
-    100% {
-        fill: red;
-    }
+  0% {
+    fill: red;
+  }
+  50% {
+    fill: white;
+  }
+  100% {
+    fill: red;
+  }
 }
 
 .soda-svg-button-2 {
-    fill: white;
-    animation: change2 1s ease-in-out infinite;
+  fill: white;
+  animation: change2 1s ease-in-out infinite;
 }
 
 @keyframes change2 {
-    0% {
-        fill: white;
-    }
-    50% {
-        fill: green;
-    }
-    100% {
-        fill: white;
-    }
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: green;
+  }
+  100% {
+    fill: white;
+  }
 }
-/* 
-@media screen and (max-width: 1450px) {
-    .svg-wrapper {
-        transform: scale(1.15) translateY(-150px) translateX(-300px);
-    }
-} */
+
+@media screen and (max-width: 600px) {
+  .svg-wrapper {
+    transform: scale(0.69);
+  }
+}

@@ -1,0 +1,14 @@
+.soda-label {
+  display: flex;
+  border-radius: 25px;
+  font-family: monospace;
+  color: #15d2ff;
+  background: #082e6a;
+  border: 3px solid black;
+  max-height: 200px;
+  padding: 5px;
+  width: 75%;
+  float: left;
+  font-size: 7px;
+  /* line-height: 40px; */
+}

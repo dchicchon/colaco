@@ -21,6 +21,9 @@
     "rules": {
         "react/prop-types": "off",
         // "import/named": "off",
+        "semi": "off",
+        "no-trailing-spaces": "warn",
+        "comma-dangle": "warn",
         "linebreak-style": "off",
         "indent": "off",
         "react/jsx-closing-tag-location": "off",

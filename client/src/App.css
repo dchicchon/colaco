@@ -1,5 +1,8 @@
 .App {
-  padding: 25px;
+  /* padding: 25px; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 html {
@@ -7,5 +10,5 @@ html {
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }

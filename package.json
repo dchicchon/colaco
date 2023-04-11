@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "reactProject": {
+    "ready": true,
+    "entry": "./client/src/App.jsx",
+    "installJson": "./client/package.json",
+    "title": "ColaCo",
+    "description": "Best soda machine on the web"
+  },
   "scripts": {
     "quickstart": "npm install && npm start",
     "install": "concurrently \"cd client && npm install \" \"cd server && npm install\" ",
@@ -18,7 +25,7 @@
     "test": "npm run test:client && npm run test:server",
     "test:e2e": "concurrently \"npm run api\" \"npm run test:wait-server\"",
     "test:wait-server": "wait-on http://localhost:4000 && npm run test:e2e-client",
-    "test:e2e-client":"cd client && npm run test:e2e",
+    "test:e2e-client": "cd client && npm run test:e2e",
     "test:client": "cd client && npm test",
     "test:server": "cd server && npm test",
     "lint": "concurrently \" cd client && npm run lint\" \"cd server && npm run lint\"  ",
