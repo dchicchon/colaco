@@ -16,15 +16,15 @@
     margin: 10px;
 }
 
-.modal-input {
+.modal_input {
     margin: 10px;
 }
 
-.modal-input > label {
+.modal_input > label {
     font-size: 20px;
 }
 
-.modal-input > input, .modal-input > textarea {
+.modal_input > input, .modal_input > textarea {
     display: block;
     margin: 10px auto;
     background: none;
@@ -36,13 +36,13 @@
     border: 1px solid #85ceff;
 }
 
-#modal-button-group {
+#modal_button_group {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
 
-#quantity-button-group {
+#quantity_button_group {
     display: flex;
     justify-content: center;
     gap: 10px;

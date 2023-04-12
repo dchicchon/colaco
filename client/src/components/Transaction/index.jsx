@@ -6,11 +6,11 @@ const parseDate = (date) => {
   return newDate.toLocaleString();
 };
 
-const Transaction = function Transaction({ transaction }) {
+function Transaction({ transaction }) {
   return (
     <div className="transaction-item" role="document">
       <span>
-        {transaction.id}
+        {transaction.key}
       </span>
       <span>
         {transaction.label}
@@ -21,8 +21,9 @@ const Transaction = function Transaction({ transaction }) {
       <span>
         {parseDate(transaction.createdAt)}
       </span>
+
     </div>
   );
-};
+}
 
 export default Transaction;

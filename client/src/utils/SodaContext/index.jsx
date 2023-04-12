@@ -7,19 +7,20 @@ export const DispatchContext = createContext();
 export const useStateContext = () => useContext(StateContext);
 export const useDispatchContext = () => useContext(DispatchContext);
 
- const initialState = {
-    messages: [],
+const initialState = {
+  messages: [],
+  sodas: [],
+  dbVersion: 0,
+  transactions: [],
 };
 
 export const SodaProvider = function SodaProvider({ children }) {
-    const [state, dispatch] = useReducer(reducer, initialState);
 
-    return (
-      <DispatchContext.Provider value={dispatch}>
-        <StateContext.Provider value={state}>
-          {children}
-        </StateContext.Provider>
-      </DispatchContext.Provider>
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    );
+  return (
+    <DispatchContext.Provider value={dispatch}>
+      <StateContext.Provider value={state}>{children}</StateContext.Provider>
+    </DispatchContext.Provider>
+  );
 };

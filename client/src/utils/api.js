@@ -1,18 +1,27 @@
-// import axios from 'axios';
+import { addSoda, buySoda, deleteSoda, getRevenue, getSodas, getTransactions, updateSoda } from './db';
 
-// let BASEURL;
-// if (import.meta.env) {
-// or we can set it to be the localhost? or somethin idk.
-// gunjs
-// BASEURL = 'http://localhost:4000';
-// } else {
-// BASEURL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
-// }
-
-export default { 
-  getSodas: () => { },
-  buySoda: () => { }
-  // getSodas: () => axios.get(`${BASEURL}/api/sodas`),
-  // buySoda: (id) => axios.put(`${BASEURL}/api/sodas`, { id }),
+export default {
+  getSodas: () => {
+    // after we get sodas, lets reset the context
+    return getSodas()
+  },
+  buySoda: (key) => {
+    return buySoda(key)
+  },
+  getRevenue: () => {
+    return getRevenue();
+  },
+  getTransactions: () => {
+    return getTransactions();
+  },
+  deleteSoda: (key) => {
+    return deleteSoda(key);
+  },
+  updateSoda: (soda) => {
+    return updateSoda(soda);
+  },
+  addSoda: (soda) => {
+    return addSoda(soda);
+  },
 
 };

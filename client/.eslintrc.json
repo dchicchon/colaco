@@ -1,33 +1,42 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "jest": true
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "react/prop-types": "off",
-        // "import/named": "off",
-        "semi": "off",
-        "no-trailing-spaces": "warn",
-        "comma-dangle": "warn",
-        "linebreak-style": "off",
-        "indent": "off",
-        "react/jsx-closing-tag-location": "off",
-        "react/no-array-index-key": "off",
-        "import/prefer-default-export": "off"
-    }
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/prop-types": "off",
+    // "import/named": "off",
+    "semi": "off",
+    "no-trailing-spaces": "warn",
+    "comma-dangle": "warn",
+    "linebreak-style": "off",
+    "indent": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/no-array-index-key": "off",
+    "import/prefer-default-export": "off",
+    "no-multiple-empty-lines": "warn",
+    "no-unused-vars": "warn",
+    "arrow-body-style": "off",
+    "padded-blocks": "warn",
+    "function-paren-newline": "warn",
+    "object-curly-newline": "warn",
+    "jsx-quotes": "warn",
+    "eol-last": "warn",
+    "arrow-parens": "warn",
+    "react/function-component-definition": "warn",
+    "react/self-closing-comp": "warn",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "react/destructuring-assignment": "warn",
+    "jsx-a11y/anchor-is-valid": "warn"
+  }
 }

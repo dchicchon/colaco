@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background: #161b28;
+  padding: 20px;
+  height: 35px;
+}
+
+.header_title {
+  margin: 0;
+}
+
+.header_revenue {
+  margin: 0;
+}

@@ -1,0 +1,11 @@
+.transaction_container_header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #85ceff;
+}
+
+.transaction_container_header > span {
+  flex: 1;
+  font-weight: bold;
+  padding: 5px;
+}

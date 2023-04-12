@@ -1,0 +1,96 @@
+.App {
+  height: 100%;
+  width: 100%;
+  color: #85ceff;
+  background: hsl(222, 29%, 15%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px;
+  overflow: auto;
+  height: 500px;
+  flex: 1;
+}
+
+.container > span > h3 {
+  display: inline;
+  margin-right: 5px;
+}
+
+.tables {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.shadow {
+  position: absolute;
+  z-index: 1;
+  transition: background 0.25s;
+  opacity: 0.5;
+  pointer-events: none;
+  background: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.rounded_button {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+.main_button {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.main_button,
+.rounded_button {
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #85ceff;
+  background: none;
+  color: #85ceff;
+  transition: background-color 0.5s;
+}
+
+.main_button:hover,
+.rounded_button:hover {
+  background-color: #3b4666;
+}
+
+.tool_tip {
+  position: relative;
+}
+
+.tool_tip:hover::after {
+  content: attr(data-desc);
+  position: absolute;
+  outline: none;
+  right: -40px;
+  width: 100px;
+  border: 1px solid #85ceff;
+  border-radius: 10px;
+  bottom: 25px;
+  background-color: #1c2333;
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

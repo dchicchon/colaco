@@ -1,44 +1,43 @@
-.message-bar {
-position: absolute;
-right: 65px;
-bottom: 100px;
+.message_bar {
+  position: absolute;
+  right: 65px;
+  bottom: 100px;
 }
 
 .message {
-    text-align: center;
-    font-size: 20px;
-    font-family: monospace;
-    /* padding: 10px; */
-    position: relative;
-    height: 75px;
-    color: white;
-    width: 300px;
-    border: 10px solid black;
-    border-radius: 25px;
-    background-color: rgb(0, 115, 160);
-    animation: fade 5s forwards;
-
+  text-align: center;
+  font-size: 20px;
+  font-family: monospace;
+  /* padding: 10px; */
+  position: relative;
+  height: 75px;
+  color: white;
+  width: 300px;
+  border: 10px solid black;
+  border-radius: 25px;
+  background-color: rgb(0, 115, 160);
+  animation: fade 5s forwards;
 }
 
 @keyframes fade {
-    0% {
-        opacity: 1;
-        bottom: 0px;
-    }
+  0% {
+    opacity: 1;
+    bottom: 0px;
+  }
 
-    50% {
-        opacity: 1;
-        bottom: 50px;
-    }
+  50% {
+    opacity: 1;
+    bottom: 50px;
+  }
 
-    100% {
-        opacity: 0;
-        bottom: 200px;
-    }
+  100% {
+    opacity: 0;
+    bottom: 200px;
+  }
 }
 
 @media screen and (max-width: 736px) {
-    .message-bar {
-        left: 500px;
-    }
+  .message-bar {
+    left: 500px;
+  }
 }

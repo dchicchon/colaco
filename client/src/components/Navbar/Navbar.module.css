@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 25px;
+  gap: 10px;
+  background-color: #11151f;
+}
+
+.link {
+  color: #85ceff;
+}

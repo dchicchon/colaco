@@ -1,23 +1,29 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom'
-import { ADD_MESSAGE } from '../../utils/actions';
+import { ADD_MESSAGE, ADD_SODA } from '../../utils/actions';
 import API from '../../utils/api';
-import { useDispatchContext } from '../../utils/SodaContext';
+import { useStateContext, useDispatchContext } from '../../utils/SodaContext';
 import SodaMachineIcon from '../SodaMachineIcon';
 import SodaLabel from '../SodaLabel';
 import './style.css';
 
 const SodaMachine = function SodaMachine() {
-  const sodaScreen = useRef(null);
-  const [sodas, setSodas] = useState([]);
+  // sodas should be found in the context
+  const { sodas, dbVersion } = useStateContext();
+  const dispatch = useDispatchContext();
+
   const [foundScreen, setFoundScreen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const dispatch = useDispatchContext();
-  const setNewSodas = async () => {
+
+  const getNewSodas = async () => {
+    console.log('getNewSodas')
+    // when we do this lets reload our list entirely?
     API.getSodas()
       .then((result) => {
-        if (result.data.length) {
-          setSodas(result.data);
+        if (result.length) {
+          result.forEach(soda => {
+            dispatch({ type: ADD_SODA, payload: soda });
+          })
         } else {
           setErrorMessage('No Sodas Available! Please check again later');
         }
@@ -41,12 +47,12 @@ const SodaMachine = function SodaMachine() {
     document.body.removeChild(a);
   };
 
-  const buySoda = async (id) => {
-    API.buySoda(id)
+  const buySoda = async (key) => {
+    API.buySoda(key)
       .then((result) => {
-        dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.data.label}` });
-        downloadJSON(result.data);
-        setNewSodas();
+        dispatch({ type: ADD_MESSAGE, payload: `Soda Purchased: ${result.label}` });
+        // downloadJSON(result);
+        getNewSodas();
       })
       .catch(() => {
         dispatch({ type: ADD_MESSAGE, payload: 'Machine Malfunction, please try again later' });
@@ -57,8 +63,13 @@ const SodaMachine = function SodaMachine() {
     if (document.getElementById('sodascreen')) {
       setFoundScreen(true);
     }
-    setNewSodas();
   }, []);
+
+  useEffect(() => {
+    if (dbVersion) {
+      getNewSodas()
+    }
+  }, [dbVersion])
 
   return (
     <div id="soda-machine">
@@ -66,7 +77,7 @@ const SodaMachine = function SodaMachine() {
         foundScreen && createPortal(
           <div id='soda-selection'>
             {sodas.length > 0 ? sodas.map((soda) => (
-              <SodaLabel key={soda.id} soda={soda} buySoda={buySoda} />
+              <SodaLabel key={soda.key} soda={soda} buySoda={buySoda} />
             )) : (
               <h4 className="error-message">
                 {errorMessage}

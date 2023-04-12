@@ -1,0 +1,5 @@
+.soda_page {
+  background: hsl(222, 29%, 15%);
+  display: flex;
+  justify-content: center;
+}
