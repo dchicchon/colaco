@@ -141,7 +141,7 @@ export const getSodas = () => {
     });
 };
 export const addTransaction = (data) => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
         const request = indexedDB.open(SODA_DB);
         request.onsuccess = async () => {
             const db = request.result;
@@ -294,7 +294,7 @@ export const deleteSoda = (key) => {
 }
 
 export const updateSoda = (soda) => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
         resolve();
     })
 }

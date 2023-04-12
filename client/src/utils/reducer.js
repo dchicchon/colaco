@@ -31,7 +31,7 @@ export const reducer = (state, action) => {
             const soda = action.payload;
             const sodas = state.sodas.slice();
             const dupeIndex = state.sodas.findIndex(
-                (storedSoda) => storedSoda.key === soda.key
+                (storedSoda) => storedSoda.key === soda.key,
             );
             if (dupeIndex >= 0) {
                 const updated = JSON.stringify(soda) !== JSON.stringify(sodas[dupeIndex]);
@@ -52,7 +52,7 @@ export const reducer = (state, action) => {
         case ADD_TRANSACTION: {
             const transaction = action.payload;
             const dupeIndex = state.transactions.findIndex(
-                (storedTransaction) => storedTransaction.key === transaction.key
+                (storedTransaction) => storedTransaction.key === transaction.key,
             );
             if (dupeIndex >= 0) {
                 return state;

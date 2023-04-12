@@ -5,8 +5,7 @@ import { ADD_SODA, CLEAR_SODAS } from '../../utils/actions';
 import styles from './Modal.module.css';
 import appStyles from '../../App.module.css';
 
-// add 'updateBool' as a prop. also take in props for soda that already exists
-const Modal = function Modal({ toggleModal, sodaToUpdate }) {
+function Modal({ toggleModal, sodaToUpdate }) {
   const dispatch = useDispatchContext();
   const [label, setLabel] = useState('');
   const [price, setPrice] = useState('');
@@ -159,10 +158,10 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
         </button>
         <button
           className={appStyles.main_button}
-          onClick={sodaToUpdate.id ? updateSoda : submitSoda}
+          onClick={sodaToUpdate.key ? updateSoda : submitSoda}
           type="button"
         >
-          Submit
+          {sodaToUpdate.key ? 'Update' : 'Submit'}
         </button>
         {sodaToUpdate.key ? (
           <button className={appStyles.main_button} type="button" onClick={deleteSoda}>
@@ -175,6 +174,6 @@ const Modal = function Modal({ toggleModal, sodaToUpdate }) {
       <p id="error">{error}</p>
     </div>
   );
-};
+}
 
 export default Modal;

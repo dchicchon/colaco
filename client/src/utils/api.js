@@ -1,4 +1,6 @@
-import { addSoda, buySoda, deleteSoda, getRevenue, getSodas, getTransactions, updateSoda } from './db';
+import {
+ addSoda, buySoda, deleteSoda, getRevenue, getSodas, getTransactions, updateSoda,
+} from './db';
 
 export default {
   getSodas: () => {
