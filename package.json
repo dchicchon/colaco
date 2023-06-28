@@ -1,6 +1,7 @@
 {
   "name": "colaco",
   "version": "0.1.0",
+  "description": "Demo of project for Github pages",
   "type": "module",
   "private": false,
   "dependencies": {
