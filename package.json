@@ -34,8 +34,8 @@
   "author": "dchicchon",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^6.4.0",
-    "husky": "^7.0.4",
-    "wait-on": "^6.0.0"
+    "concurrently": "^8.2.0",
+    "husky": "^8.0.3",
+    "wait-on": "^7.0.1"
   }
 }
