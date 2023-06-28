@@ -5,13 +5,9 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/colaCo/',
+    base: '/colaco/',
     esbuild: {
-        drop: ['console', 'debugger']
-    },
-    build: {
-        minify: false,
-        sourcemap: true // set to false for debug
+        drop: ['console', 'debugger'],
     },
     plugins: [
         react(),
