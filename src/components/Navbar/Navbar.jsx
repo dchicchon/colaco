@@ -6,10 +6,10 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <h1>Cola Co.</h1>
-      <Link className={styles.link} to="">
+      <Link className={styles.link} to="/colaco">
         To Soda Machine
       </Link>
-      <Link className={styles.link} to="admin">
+      <Link className={styles.link} to="/colaco/admin">
         To admin page
       </Link>
     </div>
