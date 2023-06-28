@@ -3,6 +3,8 @@
 ## Summary
 This [monorepo](https://en.wikipedia.org/wiki/Monorepo#:~:text=In%20version%20control%20systems%2C%20a,stored%20in%20the%20same%20repository.&text=Many%20attempts%20have%20been%20made,other%2C%20newer%20forms%20of%20monorepos.) hosts a full-stack application that can build a soda machine application. The client dispenses soda jsons from a virtual soda machine and the server hosts an api where an owner can manage their machine through an interface. The application utililzes the [MVC framework](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm) as its architecture.
 
+To follow along with the below steps, be sure to use the `stack` branch. The main branch here is dedicated to the demo site running in Github Pages
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Start](#start)
