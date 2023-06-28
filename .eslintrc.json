@@ -15,7 +15,6 @@
   "plugins": ["react"],
   "rules": {
     "react/prop-types": "off",
-    // "import/named": "off",
     "semi": "off",
     "no-trailing-spaces": "warn",
     "comma-dangle": "warn",

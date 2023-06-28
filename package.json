@@ -1,48 +1,49 @@
 {
-  "name": "colaco",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "reactProject": {
-    "ready": true,
-    "entry": "./client/src/App.jsx",
-    "installJson": "./client/package.json",
-    "title": "ColaCo",
-    "description": "Best soda machine on the web"
+  "name": "client",
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {
+    "eslint-config-airbnb": "^19.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "uuid": "^8.3.2",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "quickstart": "npm install && npm start",
-    "install": "concurrently \"cd client && npm install \" \"cd server && npm install\" ",
-    "start": "concurrently \"npm run seed\" \"npm run develop\"",
-    "develop": "concurrently \"npm run client\" \"npm run server\" ",
-    "client": "cd client && npm start",
-    "server": "cd server && npm run develop",
-    "api": "cd server && npm start",
-    "seed": "cd server && npm run seed",
-    "deploy": "npm run deploy:client && npm run deploy:server",
-    "deploy:client": "git subtree push --prefix client client master",
-    "deploy:server": "git subtree push --prefix server server master",
-    "test": "echo 'no tests available currently'",
-    "test:e2e": "concurrently \"npm run api\" \"npm run test:wait-server\"",
-    "test:wait-server": "wait-on http://localhost:4000 && npm run test:e2e-client",
-    "test:e2e-client": "cd client && npm run test:e2e",
-    "test:client": "cd client && npm test",
-    "test:server": "cd server && npm test",
-    "lint": "concurrently \" cd client && npm run lint\" \"cd server && npm run lint\"  ",
-    "prepare": "husky install",
-    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\""
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
-  "keywords": [
-    "react",
-    "express",
-    "sequelize",
-    "jest"
-  ],
-  "author": "dchicchon",
-  "license": "ISC",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "concurrently": "^6.4.0",
-    "husky": "^7.0.4",
-    "wait-on": "^6.0.0"
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/user-event": "^13.5.0",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "msw": "^0.36.3",
+    "vite": "^4.3.9",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
   }
 }
